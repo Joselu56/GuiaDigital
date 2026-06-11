@@ -1,9 +1,17 @@
 // pages/index.js
 import VideoPlayer, { VideoGrid } from "../components/VideoPlayer";
 import { videos } from "../data/videos";
+import provinciasData from "../data/provincias.json";
+import localidadesData from "../data/localidades.json";
 import Head from "next/head";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { buscarLocalidad, obtenerProvinciaId } from "../lib/localidadService";
 
+// Extraer el array de provincias
+const provinciasArray = provinciasData.provincias || [];
+
+// Mapeo de localidades por provincia para el selector (visual)
+// Este es solo para el selector, la información real viene de localidades.json
 const MUNIS = {
   bsas: ["La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Isidro","Tigre","La Reja"],
   caba: ["Palermo","Belgrano","Flores","Caballito","Recoleta","Balvanera","Villa Urquiza"],
@@ -161,14 +169,139 @@ const GUIDE_AREA = {
   qr: "vida", compras: "vida", transporte: "vida", whatsapp: "vida",
 };
 
+// Componente para mostrar información de la localidad seleccionada
+function InfoLocalidad({ localidadInfo, sz }) {
+  if (!localidadInfo) return null;
+
+  const info = localidadInfo;
+
+  return (
+    <div style={{
+      background: "#E8F5EE",
+      borderRadius: 12,
+      padding: "1rem 1.25rem",
+      marginTop: "0.75rem",
+      marginBottom: "0.25rem",
+      border: "1px solid rgba(27,107,58,0.25)"
+    }}>
+      <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, color: "#0F5C2E", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: 8 }}>
+        <i className="ti ti-info-circle" style={{ fontSize: 18 }} aria-hidden="true"></i>
+        Información de {info.nombre}
+      </p>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {/* URLs */}
+        {info.urls?.municipal && info.urls.municipal !== "" && (
+          <a href={info.urls.municipal} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
+            <i className="ti ti-building" style={{ fontSize: 16 }}></i> <span>🏛️ Sitio web municipal</span>
+          </a>
+        )}
+        
+        {info.urls?.whatsapp && info.urls.whatsapp !== "" && (
+          <a href={info.urls.whatsapp} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
+            <i className="ti ti-brand-whatsapp" style={{ fontSize: 16 }}></i> <span>📱 WhatsApp municipal</span>
+          </a>
+        )}
+        
+        {info.urls?.energia && info.urls.energia !== "" && (
+          <a href={info.urls.energia} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
+            <i className="ti ti-bolt" style={{ fontSize: 16 }}></i> <span>⚡ Sitio web de energía eléctrica</span>
+          </a>
+        )}
+        
+        {info.urls?.agua && info.urls.agua !== "" && (
+          <a href={info.urls.agua} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
+            <i className="ti ti-droplet" style={{ fontSize: 16 }}></i> <span>💧 Sitio web de agua corriente</span>
+          </a>
+        )}
+        
+        {info.urls?.hospital && info.urls.hospital !== "" && (
+          <a href={info.urls.hospital} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
+            <i className="ti ti-hospital" style={{ fontSize: 16 }}></i> <span>🏥 Sitio web del hospital</span>
+          </a>
+        )}
+
+        {/* Contactos */}
+        {info.contacto?.nombre_hospital && info.contacto.nombre_hospital !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-hospital" style={{ fontSize: 16 }}></i>
+            <span>🏥 Hospital: </span>
+            <span style={{ color: "#D4580A", fontWeight: 700 }}>{info.contacto.nombre_hospital}</span>
+          </div>
+        )}
+
+        {info.contacto?.hospital_guardia && info.contacto.hospital_guardia !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-phone" style={{ fontSize: 16 }}></i>
+            <span>🏥 Hospital guardia: </span>
+            <a href={`tel:${info.contacto.hospital_guardia.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
+              {info.contacto.hospital_guardia}
+            </a>
+          </div>
+        )}
+
+        {info.contacto?.telefono_reclamos && info.contacto.telefono_reclamos !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-phone" style={{ fontSize: 16 }}></i>
+            <span>📞 Teléfono de reclamos: </span>
+            <a href={`tel:${info.contacto.telefono_reclamos.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
+              {info.contacto.telefono_reclamos}
+            </a>
+          </div>
+        )}
+
+        {info.contacto?.policia && info.contacto.policia !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-shield" style={{ fontSize: 16 }}></i>
+            <span>👮 Policía: </span>
+            <a href={`tel:${info.contacto.policia.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
+              {info.contacto.policia}
+            </a>
+          </div>
+        )}
+
+        {info.contacto?.bomberos && info.contacto.bomberos !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-flame" style={{ fontSize: 16 }}></i>
+            <span>🚒 Bomberos: </span>
+            <a href={`tel:${info.contacto.bomberos.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
+              {info.contacto.bomberos}
+            </a>
+          </div>
+        )}
+
+        {info.contacto?.defensa_civil && info.contacto.defensa_civil !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-ambulance" style={{ fontSize: 16 }}></i>
+            <span>🆘 Defensa Civil: </span>
+            <a href={`tel:${info.contacto.defensa_civil.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
+              {info.contacto.defensa_civil}
+            </a>
+          </div>
+        )}
+
+        {info.contacto?.registro_civil && info.contacto.registro_civil !== "" && (
+          <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <i className="ti ti-file-text" style={{ fontSize: 16 }}></i>
+            <span>📄 Registro Civil: </span>
+            <span style={{ color: "#D4580A" }}>{info.contacto.registro_civil}</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [fontSize, setFontSize] = useState("normal");
   const [provincia, setProvincia] = useState("");
   const [municipio, setMunicipio] = useState("");
+  const [localidadInfo, setLocalidadInfo] = useState(null);
   const [activePanel, setActivePanel] = useState("inicio");
   const [activeGuide, setActiveGuide] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [categoriaVideo, setCategoriaVideo] = useState("todos"); // Filtro de categoría de videos
+  const [categoriaVideo, setCategoriaVideo] = useState("todos");
+  const [isMobile, setIsMobile] = useState(false);
 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -178,6 +311,35 @@ export default function Home() {
   const ayudaSectionRef = useRef(null); 
   const videosSectionRef = useRef(null);
   const ultimoMensajeRef = useRef(null);
+
+  // Detectar si es dispositivo móvil
+  useEffect(() => {
+    const detectMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    detectMobile();
+    window.addEventListener('resize', detectMobile);
+    
+    return () => window.removeEventListener('resize', detectMobile);
+  }, []);
+
+  // Cargar información de la localidad cuando se selecciona municipio
+  useEffect(() => {
+    if (!municipio || !provincia) {
+      setLocalidadInfo(null);
+      return;
+    }
+
+    const provinciaId = obtenerProvinciaId(provincia);
+    if (!provinciaId) {
+      setLocalidadInfo(null);
+      return;
+    }
+
+    const info = buscarLocalidad(municipio, provinciaId);
+    setLocalidadInfo(info);
+  }, [municipio, provincia]);
 
   const location = municipio || (provincia ? MUNIS[provincia]?.[0] : "Argentina");
 
@@ -219,11 +381,38 @@ export default function Home() {
   function goPanel(id) {
     setActivePanel(id);
     setActiveGuide(null);
+    
+    // Scroll suave con ajuste para móvil
+    setTimeout(() => {
+      if (isMobile) {
+        const yOffset = -80;
+        const element = document.getElementById('panel-container');
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      } else {
+        document.getElementById('panel-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
   }
 
   function showGuide(id) {
     setActiveGuide(id);
     if (GUIDE_AREA[id]) setActivePanel(GUIDE_AREA[id]);
+    
+    setTimeout(() => {
+      if (isMobile) {
+        const yOffset = -80;
+        const element = document.getElementById('panel-container');
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      } else {
+        document.getElementById('panel-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
   }
 
   function openVideosAndScroll() {
@@ -231,9 +420,19 @@ export default function Home() {
     setActiveGuide(null);
     const videoMain = videos.find(v => v.id === "v1");
     if (videoMain) setSelectedVideo(videoMain);
+    
     setTimeout(() => {
-      videosSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 60);
+      if (isMobile) {
+        const yOffset = -80;
+        const element = document.getElementById('videos-section');
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      } else {
+        videosSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
   }
 
   const sz = fontSize === "large";
@@ -243,7 +442,7 @@ export default function Home() {
       <Head>
         <title>Conexión Senior — La tecnología a tu ritmo</title>
         <meta name="description" content="Guías paso a paso para adultos mayores en Argentina. Salud, trámites, compras y más, en lenguaje simple." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
@@ -273,29 +472,37 @@ export default function Home() {
             </div>
           </header>
 
-          {/* LOCBAR */}
-          <div style={{ background: "#F1EFE8", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "0.5rem 1.25rem", display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-            <i className="ti ti-map-pin" style={{ fontSize: 16, color: "#1B6B3A" }} aria-hidden="true"></i>
-            <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>Su provincia:</label>
-            <select id="sel-prov" value={provincia} onChange={e => { setProvincia(e.target.value); setMunicipio(""); }}
-              style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: "5px 10px", fontFamily: "inherit", fontSize: 13, cursor: "pointer", minWidth: 145 }}>
-              <option value="">— Elegir provincia —</option>
-              {[["bsas","Buenos Aires"],["caba","Ciudad de Buenos Aires"],["cba","Córdoba"],["sf","Santa Fe"],["mza","Mendoza"],["tuc","Tucumán"],["entre","Entre Ríos"],["mis","Misiones"],["salta","Salta"],["chaco","Chaco"]].map(([v,l]) => (
-                <option key={v} value={v}>{l}</option>
-              ))}
-            </select>
-            {provincia && (
-              <select value={municipio} onChange={e => setMunicipio(e.target.value)}
+          {/* LOCBAR con datos de provincias.json */}
+          <div style={{ background: "#F1EFE8", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "0.5rem 1.25rem", display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <i className="ti ti-map-pin" style={{ fontSize: 16, color: "#1B6B3A" }} aria-hidden="true"></i>
+              <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>Su provincia:</label>
+              <select id="sel-prov" value={provincia} onChange={e => { setProvincia(e.target.value); setMunicipio(""); }}
                 style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: "5px 10px", fontFamily: "inherit", fontSize: 13, cursor: "pointer", minWidth: 145 }}>
-                <option value="">— Elegir municipio —</option>
-                {(MUNIS[provincia] || []).map(m => <option key={m} value={m}>{m}</option>)}
+                <option value="">— Elegir provincia —</option>
+                {provinciasArray.map(prov => (
+                  <option key={prov.id} value={prov.id}>{prov.nombre}</option>
+                ))}
               </select>
-            )}
-            {municipio && (
-              <span style={{ background: "#E8F5EE", color: "#0F5C2E", borderRadius: 14, padding: "3px 10px", fontSize: 12, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
-                <i className="ti ti-check" aria-hidden="true"></i> {municipio}
-              </span>
-            )}
+              {provincia && (
+                <>
+                  <label htmlFor="sel-mun" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>Municipio / localidad:</label>
+                  <select id="sel-mun" value={municipio} onChange={e => setMunicipio(e.target.value)}
+                    style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: "5px 10px", fontFamily: "inherit", fontSize: 13, cursor: "pointer", minWidth: 160 }}>
+                    <option value="">— Elegir municipio —</option>
+                    {(MUNIS[provincia] || []).map(m => <option key={m} value={m}>{m}</option>)}
+                  </select>
+                </>
+              )}
+              {municipio && (
+                <span style={{ background: "#E8F5EE", color: "#0F5C2E", borderRadius: 14, padding: "3px 10px", fontSize: 12, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
+                  <i className="ti ti-check" aria-hidden="true"></i> {municipio}
+                </span>
+              )}
+            </div>
+            
+            {/* Mostrar información de la localidad si está disponible */}
+            {localidadInfo && <InfoLocalidad localidadInfo={localidadInfo} sz={sz} />}
           </div>
 
           {/* HERO */}
@@ -321,13 +528,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* BIG BUTTONS NAVEGACIÓN MODIFICADA (OPCIÓN 1) */}
+          {/* BIG BUTTONS NAVEGACIÓN MODIFICADA */}
           <nav style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 8, padding: "1rem 1.25rem", borderBottom: "0.5px solid rgba(0,0,0,0.12)" }}>
             {[
               { id: "salud", ico: "ti-heartbeat", lbl: "Salud", sub: "Turnos y recetas", bg: "#E1F5EE", color: "#085041" },
               { id: "estado", ico: "ti-building-bank", lbl: "Trámites", sub: "ANSES y DNI", bg: "#E6F1FB", color: "#042C53" },
               { id: "vida", ico: "ti-shopping-cart", lbl: "Vida diaria", sub: "Pagos y compras", bg: "#FEF3EB", color: "#7A2F00" },
-              { id: "videos", ico: "ti-video", lbl: "Videos", sub: "Clases guiadas", bg: "#FFF4E5", color: "#B35400" }, // SECCIÓN EXCLUSIVA DE VIDEOS
+              { id: "videos", ico: "ti-video", lbl: "Videos", sub: "Clases guiadas", bg: "#FFF4E5", color: "#B35400" },
               { id: "ayuda", ico: "ti-help-circle", lbl: "Ayuda", sub: "Asistente virtual", bg: "#EEEDFE", color: "#26215C" },
             ].map(b => (
               <button key={b.id} onClick={() => goPanel(b.id)} aria-pressed={activePanel === b.id}
@@ -341,8 +548,8 @@ export default function Home() {
             ))}
           </nav>
 
-          {/* PANEL AREA */}
-          <div style={{ minHeight: 360, padding: "1.4rem 1.5rem" }}>
+          {/* PANEL AREA con ID para scroll */}
+          <div id="panel-container" style={{ minHeight: 360, padding: "1.4rem 1.5rem" }}>
 
             {activePanel === "inicio" && (
               <p style={{ fontSize: sz ? 19 : 17, color: "#5F5E5A", textAlign: "center", padding: "2rem 0", lineHeight: 1.8 }}>
@@ -364,9 +571,9 @@ export default function Home() {
               />
             )}
 
-            {/* PANEL EXCLUSIVO DE VIDEOS CON FILTROS (OPCIÓN 1) */}
+            {/* PANEL EXCLUSIVO DE VIDEOS CON FILTROS */}
             {activePanel === "videos" && (
-              <div ref={videosSectionRef} style={{ scrollMarginTop: "24px" }}>
+              <div id="videos-section" ref={videosSectionRef} style={{ scrollMarginTop: "24px" }}>
                 <VideosPanel
                   sz={sz}
                   selectedVideo={selectedVideo}
@@ -507,7 +714,7 @@ function PanelContent({ panel, sz, activeGuide, showGuide, goPanel, sendChat, ay
   );
 }
 
-// COMPONENTE NUEVO: COMPONENTE EXCLUSIVO PARA LA NAVEGACIÓN Y FILTRADO DE VIDEOS
+// COMPONENTE EXCLUSIVO PARA LA NAVEGACIÓN Y FILTRADO DE VIDEOS
 function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setCategoriaVideo }) {
   const categoriasFiltro = [
     { id: "todos", label: "📺 Todos" },
@@ -517,7 +724,6 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
     { id: "vida", label: "🛒 Vida Diaria" }
   ];
 
-  // Filtrado de la lista central dinámicamente en base al estado del filtro
   const videosFiltrados = categoriaVideo === "todos" 
     ? videos 
     : videos.filter(v => v.categoria === categoriaVideo);
@@ -529,7 +735,6 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
         Clases en Video y Tutoriales Pasos a Paso
       </p>
 
-      {/* Reproductor Destacado Superior */}
       {selectedVideo ? (
         <div style={{ marginBottom: "1.5rem", background: "#FAF8F3", padding: "1rem", borderRadius: 12, border: "1px solid rgba(0,0,0,0.08)" }}>
           <p style={{ fontSize: sz ? 16 : 14, fontWeight: 700, color: "#D4580A", marginBottom: "0.5rem" }}>Viendo ahora:</p>
@@ -541,7 +746,6 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
         </div>
       )}
 
-      {/* Selector de Filtros Grandes Adaptado para Adultos Mayores */}
       <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, marginBottom: ".6rem", color: "#1a1a18" }}>¿De qué tema busca videos?</p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: "1.5rem" }}>
         {categoriasFiltro.map(cat => {
@@ -569,7 +773,6 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
         })}
       </div>
 
-      {/* Grilla de resultados filtrados */}
       <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, marginBottom: ".8rem", color: "#1a1a18" }}>
         Tutoriales encontrados ({videosFiltrados.length})
       </p>
@@ -580,7 +783,6 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
           sz={sz} 
           onSelect={(video) => {
             setSelectedVideo(video);
-            // Hacemos scroll suave hacia arriba para que el reproductor quede visible al hacer click
             window.scrollTo({ top: 300, behavior: "smooth" });
           }} 
         />

@@ -1,0 +1,25 @@
+{
+  "provincias": [
+    { "id": "bsas", "nombre": "Buenos Aires" },
+    { "id": "caba", "nombre": "CABA" },
+    { "id": "cba", "nombre": "Córdoba" },
+    { "id": "sf", "nombre": "Santa Fe" },
+    { "id": "mza", "nombre": "Mendoza" },
+    { "id": "tuc", "nombre": "Tucumán" },
+    { "id": "entre", "nombre": "Entre Ríos" },
+    { "id": "mis", "nombre": "Misiones" },
+    { "id": "salta", "nombre": "Salta" },
+    { "id": "chu", "nombre": "Chubut" },
+    { "id": "sc", "nombre": "Santa Cruz" },
+    { "id": "tf", "nombre": "Tierra del Fuego" },
+    { "id": "lr", "nombre": "La Rioja" },
+    { "id": "cat", "nombre": "Catamarca" },
+    { "id": "sj", "nombre": "San Juan" },
+    { "id": "ju", "nombre": "Jujuy" },
+    { "id": "fo", "nombre": "Formosa" },
+    { "id": "co", "nombre": "Corrientes" },
+    { "id": "sl", "nombre": "San Luis" },
+    { "id": "lp", "nombre": "La Pampa" },
+    { "id": "chaco", "nombre": "Chaco" }
+  ]
+}

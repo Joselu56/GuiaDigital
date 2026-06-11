@@ -1,0 +1,1162 @@
+{
+  "bsas": [
+    {
+      "nombre": "Bahía Blanca",
+      "urls": {
+        "municipal": "https://www.bahiablanca.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edes.com.ar/",
+        "agua": "https://www.absasainstitucional.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "La Plata",
+      "urls": {
+        "municipal": "https://www.laplata.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edelap.com.ar/",
+        "agua": "https://www.absasainstitucional.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "147",
+        "hospital_guardia": "0221-4251717",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "La Reja",
+      "urls": {
+        "municipal": "https://www.moreno.gob.ar/",
+        "whatsapp": "https://wa.me/5491139151528",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "147",
+        "hospital_guardia": "0237-4620021",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Lomas de Zamora",
+      "urls": {
+        "municipal": "https://www.lomasdezamora.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Mar del Plata",
+      "urls": {
+        "municipal": "https://www.mardelplata.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edea.com.ar/",
+        "agua": "https://www.osmgp.gov.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Merlo",
+      "urls": {
+        "municipal": "https://www.merlo.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Moreno",
+      "urls": {
+        "municipal": "https://www.moreno.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Morón",
+      "urls": {
+        "municipal": "https://www.moron.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Quilmes",
+      "urls": {
+        "municipal": "https://www.quilmes.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Isidro",
+      "urls": {
+        "municipal": "https://www.sanisidro.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Tigre",
+      "urls": {
+        "municipal": "https://www.tigre.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "caba": [
+    {
+      "nombre": "Balvanera",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Belgrano",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Caballito",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Flores",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Palermo",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Recoleta",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesur.com.ar/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Villa Urquiza",
+      "urls": {
+        "municipal": "https://buenosaires.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "cba": [
+    {
+      "nombre": "Capilla del Monte",
+      "urls": {
+        "municipal": "https://capilladelmonte.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://capilladelmonte.gov.ar/",
+        "hospital": "https://www.capilladelmonte.gov.ar/hospital.html"
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Cosquín",
+      "urls": {
+        "municipal": "https://cosquin.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://cosquin.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Córdoba Capital",
+      "urls": {
+        "municipal": "https://www.cordoba.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.aguascordobesas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "La Cumbre",
+      "urls": {
+        "municipal": "https://lacumbre.gob.ar/",
+        "whatsapp": "https://wa.me/5493548591011",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://lacumbre.gob.ar/servicios",
+        "hospital": "https://www.lacumbre.gob.ar/salud/"
+      },
+      "contacto": {
+        "telefono_reclamos": "03548-451241",
+        "hospital_guardia": "107 / 03548-451100",
+        "policia": "101 / 03548-456641",
+        "bomberos": "100 / 03548-452413",
+        "defensa_civil": "103 / 03548-451457",
+        "nombre_hospital": "Hospital Municipal Dr.Oscar Vignaroli",
+        "registro_civil": "Justo Paez Molina y Ameghino - 03548-15430253"
+      }
+    },
+    {
+      "nombre": "La Falda",
+      "urls": {
+        "municipal": "https://lafalda.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://lafalda.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Río Cuarto",
+      "urls": {
+        "municipal": "https://www.riocuarto.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.emos.gov.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Francisco",
+      "urls": {
+        "municipal": "https://www.sanfrancisco.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.sanfrancisco.gov.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Villa Carlos Paz",
+      "urls": {
+        "municipal": "https://www.villacarlospaz.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.villacarlospaz.gov.ar/",
+        "agua": "https://www.villacarlospaz.gov.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Villa María",
+      "urls": {
+        "municipal": "villamaria.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://villamaria.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "sf": [
+    {
+      "nombre": "Rafaela",
+      "urls": {
+        "municipal": "https://www.rafaela.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://www.aguassantafesinas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Reconquista",
+      "urls": {
+        "municipal": "https://reconquista.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://www.aguassantafesinas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Rosario",
+      "urls": {
+        "municipal": "https://www.rosario.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://www.aguassantafesinas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Lorenzo",
+      "urls": {
+        "municipal": "https://sanlorenzo.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://www.aguassantafesinas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Santa Fe Capital",
+      "urls": {
+        "municipal": "https://santafeciudad.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://www.aguassantafesinas.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Venado Tuerto",
+      "urls": {
+        "municipal": "https://venadotuerto.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epe.santafe.gov.ar/",
+        "agua": "https://venadotuerto.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "mza": [
+    {
+      "nombre": "Godoy Cruz",
+      "urls": {
+        "municipal": "https://www.godoycruz.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://www.aysaam.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Las Heras",
+      "urls": {
+        "municipal": "https://lasheras.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://lasheras.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Luján de Cuyo",
+      "urls": {
+        "municipal": "https://lujandecuyo.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://lujandecuyo.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Maipú",
+      "urls": {
+        "municipal": "https://maipu.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://maipu.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Mendoza Capital",
+      "urls": {
+        "municipal": "https://ciudaddemendoza.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://www.aysaam.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Rafael",
+      "urls": {
+        "municipal": "https://sanrafael.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edemsa.com/",
+        "agua": "https://www.aysaam.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "tuc": [
+    {
+      "nombre": "Banda del Río Salí",
+      "urls": {
+        "municipal": "https://bandadelriosali.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edet.com.ar/",
+        "agua": "https://www.sat.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Concepción",
+      "urls": {
+        "municipal": "http://www.concepcion.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edet.com.ar/",
+        "agua": "https://www.sat.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Miguel de Tucumán",
+      "urls": {
+        "municipal": "https://smt.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edet.com.ar/",
+        "agua": "https://www.sat.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Tafí Viejo",
+      "urls": {
+        "municipal": "http://tafiviejo.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edet.com.ar/",
+        "agua": "https://www.sat.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Yerba Buena",
+      "urls": {
+        "municipal": "https://yerbabuena.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edet.com.ar/",
+        "agua": "https://www.sat.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "entre": [
+    {
+      "nombre": "Concepción del Uruguay",
+      "urls": {
+        "municipal": "https://cdeluruguay.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.enersa.com.ar/",
+        "agua": "https://cdeluruguay.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Concordia",
+      "urls": {
+        "municipal": "https://www.concordia.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.enersa.com.ar/",
+        "agua": "https://www.concordia.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Gualeguaychú",
+      "urls": {
+        "municipal": "https://gualeguaychu.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.enersa.com.ar/",
+        "agua": "https://gualeguaychu.gov.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Paraná",
+      "urls": {
+        "municipal": "https://www.parana.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.enersa.com.ar/",
+        "agua": "https://www.parana.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "mis": [
+    {
+      "nombre": "Eldorado",
+      "urls": {
+        "municipal": "https://eldorado.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.emsa.com.ar/",
+        "agua": "https://eldorado.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Oberá",
+      "urls": {
+        "municipal": "https://obera.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.emsa.com.ar/",
+        "agua": "https://obera.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Posadas",
+      "urls": {
+        "municipal": "https://posadas.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.emsa.com.ar/",
+        "agua": "https://www.samsa.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Puerto Iguazú",
+      "urls": {
+        "municipal": "https://iguazu.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.emsa.com.ar/",
+        "agua": "https://iguazu.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "salta": [
+    {
+      "nombre": "Metán",
+      "urls": {
+        "municipal": "https://www.sanjosedemetan.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesa.com.ar/",
+        "agua": "https://www.aguasdelnortesalta.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Salta Capital",
+      "urls": {
+        "municipal": "https://municipalidadsalta.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesa.com.ar/",
+        "agua": "https://www.aguasdelnortesalta.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "San Ramón de la Nueva Orán",
+      "urls": {
+        "municipal": "https://oran.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesa.com.ar/",
+        "agua": "https://www.aguasdelnortesalta.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Tartagal",
+      "urls": {
+        "municipal": "https://www.tartagal.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.edesa.com.ar/",
+        "agua": "https://www.aguasdelnortesalta.com.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ],
+  "chaco": [
+    {
+      "nombre": "Charata",
+      "urls": {
+        "municipal": "https://charata.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.secheep.gov.ar/",
+        "agua": "https://www.sameep.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Presidencia Roque Sáenz Peña",
+      "urls": {
+        "municipal": "https://saenzpena.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.secheep.gov.ar/",
+        "agua": "https://www.sameep.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Resistencia",
+      "urls": {
+        "municipal": "https://www.resistencia.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.secheep.gov.ar/",
+        "agua": "https://www.sameep.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    },
+    {
+      "nombre": "Villa Ángela",
+      "urls": {
+        "municipal": "https://villaangela.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.secheep.gov.ar/",
+        "agua": "https://www.sameep.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "",
+        "hospital_guardia": "",
+        "policia": "",
+        "bomberos": "",
+        "defensa_civil": "",
+        "nombre_hospital": "",
+        "registro_civil": ""
+      }
+    }
+  ]
+}
