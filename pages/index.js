@@ -15,7 +15,7 @@ const provinciasArray = provinciasData.provincias || [];
 const MUNIS = {
   bsas: ["La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Isidro","Tigre","La Reja"],
   caba: ["Palermo","Belgrano","Flores","Caballito","Recoleta","Balvanera","Villa Urquiza"],
-  cba:  ["Córdoba Capital","Río Cuarto","Villa María","San Francisco","Villa Carlos Paz","Cosquín","La Cumbre","La Falda","Capilla del Monte"],
+  cba:  ["Córdoba Capital","Río Cuarto","Villa María","San Francisco","Villa Carlos Paz","Cosquín","La Cumbre","La Falda","Capilla del Monte","Jesús María","Colonia Caroya","San Esteban","Villa Giardino","Valle Hermoso"],
   sf:   ["Rosario","Santa Fe Capital","Venado Tuerto","Rafaela","San Lorenzo","Reconquista"],
   mza:  ["Mendoza Capital","San Rafael","Godoy Cruz","Maipú","Luján de Cuyo","Las Heras"],
   tuc:  ["San Miguel de Tucumán","Concepción","Banda del Río Salí","Yerba Buena","Tafí Viejo"],
@@ -23,6 +23,8 @@ const MUNIS = {
   mis:  ["Posadas","Oberá","Eldorado","Puerto Iguazú"],
   salta:["Salta Capital","San Ramón de la Nueva Orán","Tartagal","Metán"],
   chaco:["Resistencia","Presidencia Roque Sáenz Peña","Villa Ángela","Charata"],
+  chubut: ["Comodoro Rivadavia","Puerto Madryn","Rawson","Trelew"],
+  santacruz: ["Caleta Olivia","Cañadón Seco","El Chaltén","Las Heras","Perito Moreno","Pico Truncado","Río Gallegos"]
 };
 
 const GUIDES = {

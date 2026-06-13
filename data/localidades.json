@@ -4,38 +4,38 @@
       "nombre": "Bahía Blanca",
       "urls": {
         "municipal": "https://www.bahiablanca.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "+5492916464922",
         "energia": "https://www.edes.com.ar/",
         "agua": "https://www.absasainstitucional.com.ar/",
-        "hospital": ""
+        "hospital": "www.hmabb.gob.ar"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800.666.2244",
+        "hospital_guardia": "Hospital Interzonal Dr. José Penna, Hospital Municipal Dr. Leónidas Lucero",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "+54 (291) 4563660",
+        "nombre_hospital": "Hospital Interzonal General de Agudos Dr. José Penna, Hospital Municipal de Agudos Dr. Leónidas Lucero",
+        "registro_civil": "Castelli 366, B8000 Bahía Blanca, Provincia de Buenos Aires, Argentina. Teléfono: +542914531336"
       }
     },
     {
       "nombre": "La Plata",
       "urls": {
         "municipal": "https://www.laplata.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5492213514031",
         "energia": "https://www.edelap.com.ar/",
         "agua": "https://www.absasainstitucional.com.ar/",
-        "hospital": ""
+        "hospital": "https://hospitalsanmartin.com.ar/"
       },
       "contacto": {
         "telefono_reclamos": "147",
         "hospital_guardia": "0221-4251717",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "policia": "911 (Emergencias), 0221 457-7117 (Jefatura Departamental La Plata)",
+        "bomberos": "100 (Emergencias), 0221 423-1736 (Bomberos de La Plata)",
+        "defensa_civil": "103 (Emergencias), 0221 451-0099 (Defensa Civil Municipalidad de La Plata)",
+        "nombre_hospital": "Hospital Interzonal General de Agudos \"General José de San Martín\"",
+        "registro_civil": "0221 429-6200 (Registro de las Personas, Calle 1 y 60, La Plata)"
       }
     },
     {
@@ -45,16 +45,16 @@
         "whatsapp": "https://wa.me/5491139151528",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.ms.gba.gov.ar/sitios/hmyldelavega/"
       },
       "contacto": {
         "telefono_reclamos": "147",
         "hospital_guardia": "0237-4620021",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "policia": "911 (Emergencias) - Comisaría 7ª Moreno - La Reja",
+        "bomberos": "100 (Emergencias), 0237 4622000 (Bomberos Voluntarios de Moreno)",
+        "defensa_civil": "103 (Emergencias)",
+        "nombre_hospital": "Hospital Zonal General de Agudos Mariano y Luciano de la Vega",
+        "registro_civil": "Sanabria 949-999, Francisco Alvarez, Provincia de Buenos Aires"
       }
     },
     {
@@ -64,149 +64,149 @@
         "whatsapp": "",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/gandulfohospital/?locale=es_LA"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-122-5662 (LOMAS), 0800-666-6666",
+        "hospital_guardia": "011 4245-0000 / 011 4244-0232 int 1051 (Hospital Gandulfo)",
+        "policia": "911 (Emergencias), 147 (Seguridad Lomas), 011-4244-8344 (Policía Local), 11-6983-8465 (Comisaría 1ª - llamadas y WhatsApp)",
+        "bomberos": "100 (Emergencias), 4243-2222 / 4245-7482 (Bomberos Voluntarios de Lomas de Zamora)",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Interzonal General de Agudos Luisa Cravegna de Gandulfo",
+        "registro_civil": "01142431560"
       }
     },
     {
       "nombre": "Mar del Plata",
       "urls": {
         "municipal": "https://www.mardelplata.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "2236027000",
         "energia": "https://www.edea.com.ar/",
         "agua": "https://www.osmgp.gov.ar/",
-        "hospital": ""
+        "hospital": "https://www.ms.gba.gov.ar/sitios/halende/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "107 (Emergencias Médicas SAME) / 0223 477-0262 al 65 (Hospital Interzonal General de Agudos Dr. Oscar Alende)",
+        "policia": "911 (Emergencias) / 0223 495-0085 (Comisaría Distrital Primera)",
+        "bomberos": "100",
+        "defensa_civil": "103 (Emergencias) / 0223 499-6444",
+        "nombre_hospital": "Hospital Interzonal General de Agudos Dr. Oscar Alende",
+        "registro_civil": "+542234957741 (Registro Civil de Mar del Plata, Avenida Independencia 2846 48)"
       }
     },
     {
       "nombre": "Merlo",
       "urls": {
         "municipal": "https://www.merlo.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "+549 220 4039581",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.merlo.gob.ar/hospital-municipal-eva-peron/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(0220) 483-0954 / 7981 / 482-3581",
+        "hospital_guardia": "(0220) 483-3333 (Hospital Zonal General de Agudos Héroes de Malvinas)",
+        "policia": "911",
+        "bomberos": "(0220) 482-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Zonal General de Agudos Héroes de Malvinas",
+        "registro_civil": "+542204820264 (Registro Civil de las Personas en Merlo)"
       }
     },
     {
       "nombre": "Moreno",
       "urls": {
         "municipal": "https://www.moreno.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11 3924 3076",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.ms.gba.gov.ar/sitios/hmyldelavega/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0237-4669200",
+        "hospital_guardia": "0237-4620038 / 4620039",
+        "policia": "0237-46203338",
+        "bomberos": "0237-4622000",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Zonal General de Agudos \"Mariano y Luciano de la Vega\"",
+        "registro_civil": "+542374620433"
       }
     },
     {
       "nombre": "Morón",
       "urls": {
         "municipal": "https://www.moron.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11-5585-1000 (Programa \"Ojos en Alerta\" para seguridad ciudadana)",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "http://www.moron.gov.ar/nuestra-gestion/salud/hospital-de-moron/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0-800-666-6766 (Sistema de Atención al Vecino OIR)",
+        "hospital_guardia": "4133-4100 (Hospital Municipal Ostaciana B. de Lavignolle - Guardia 24h)",
+        "policia": "911 (Emergencias), 4689-3333 (Comisaría Morón 1º - Morón Centro)",
+        "bomberos": "100 (Emergencias), 4629-2222 (Bomberos Voluntarios de Morón)",
+        "defensa_civil": "103, 4483-2127, 11-3623-5134",
+        "nombre_hospital": "Hospital Municipal Ostaciana B. de Lavignolle",
+        "registro_civil": "+541146299312 (Registro Civil de las Personas en Morón)"
       }
     },
     {
       "nombre": "Quilmes",
       "urls": {
         "municipal": "https://www.quilmes.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11-4493-4483",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.ms.gba.gov.ar/sitios/hiriarte"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-999-5656",
+        "hospital_guardia": "(011) 4224-7738/6245 (Conmutador Hospital Iriarte)",
+        "policia": "147 (Centro de Emergencias de Quilmes)",
+        "bomberos": "4253-2222 (Bomberos Voluntarios de Quilmes)",
+        "defensa_civil": "4257-4411",
+        "nombre_hospital": "Hospital Zonal General de Agudos Dr. Isidoro Iriarte",
+        "registro_civil": "+541142534292"
       }
     },
     {
       "nombre": "San Isidro",
       "urls": {
         "municipal": "https://www.sanisidro.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://api.whatsapp.com/send?phone=5491123123300",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.sanisidro.gob.ar/hospitales-municipales/hospital-central-de-san-isidro"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4512-3777",
+        "policia": "4512-3333",
+        "bomberos": "100 / 4747-2222",
+        "defensa_civil": "4512-3103",
+        "nombre_hospital": "Hospital Central de San Isidro Dr. Melchor Ángel Posse",
+        "registro_civil": "+541147437224"
       }
     },
     {
       "nombre": "Tigre",
       "urls": {
         "municipal": "https://www.tigre.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://www.tigre.gob.ar/tigrix",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.tigre.gob.ar/gestion_para_el_vecino/salud/informacion_sobre_hospitales"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-122-TIGRE (84473)",
+        "hospital_guardia": "4512-9999 (SET - Servicio de Emergencias Tigre)",
+        "policia": "911 / 5288-3400 (COT)",
+        "bomberos": "100 / 4749-2222",
+        "defensa_civil": "103 / 5288-3411 / 5288-3414",
+        "nombre_hospital": "Hospital Municipal de Diagnóstico Inmediato Dr. Valentín Nores",
+        "registro_civil": "Registro de las Personas en Tigre"
       }
     }
   ],
@@ -215,133 +215,133 @@
       "nombre": "Balvanera",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://api.whatsapp.com/send?phone=5491150500147",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://buenosaires.gob.ar/salud/establecimientos-hospitales-y-centros-de-salud/hospital-ramos-mejia"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "4304-5153 (Sede Comunal 3)",
+        "hospital_guardia": "4127-0400 (Hospital Ramos Mejía)",
+        "policia": "4961-3333 / 4961-7342 / 4964-3421 (Comisaría Vecinal 3-C)",
+        "bomberos": "4863-2884 (Destacamento Once, Balvanera)",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos J. M. Ramos Mejía",
+        "registro_civil": "4304-5153 (Sede Comunal 3, Sarandí 1273)"
       }
     },
     {
       "nombre": "Belgrano",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5491150500147",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.buenosaires.gob.ar/salud/hospitales-y-establecimientos-de-salud/hospital-pirovan"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4542-5552",
+        "policia": "911",
+        "bomberos": "4783-2222 (División Cuartel V \"Belgrano\") / 100 (Emergencias)",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos \"Dr. Ignacio Pirovano\"",
+        "registro_civil": "0800-999-2727 (Atención Ciudadana CABA)"
       }
     },
     {
       "nombre": "Caballito",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://www.buenosaires.gob.ar/contactate-con-nosotros",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.buenosaires.gob.ar/salud/hospitales-y-establecimientos-de-salud/hospital-durand"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4982-1771 / 4981-2790 / 2908",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos \"Carlos G. Durand\"",
+        "registro_civil": "Sede Comunal 6, Patricias Argentinas 277. Teléfonos: 4958-6504 / 7660 / 7047"
       }
     },
     {
       "nombre": "Flores",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11-5050-0147",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.buenosaires.gob.ar/salud/hospitales-y-establecimientos-de-salud/hospital-alvarez"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4631-5555 (Hospital Piñero)",
+        "policia": "911",
+        "bomberos": "4632-5806 (División Cuartel VIII \"Flores\")",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos Dr. Teodoro Álvarez",
+        "registro_civil": "4923-5021 (Comuna 7, Emilio Mitre 956)"
       }
     },
     {
       "nombre": "Palermo",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5491150500147",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://buenosaires.gob.ar/salud/hospitales-y-establecimientos-de-salud/hospital-fernandez"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4809-2002 / 2340 (Hospital Fernández)",
+        "policia": "4823-0142 (Comisaría 21 de Palermo)",
+        "bomberos": "4772-2222 (Destacamento Palermo)",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos Dr. Juan A. Fernández",
+        "registro_civil": "Beruti 3325, C1425 Cdad. Autónoma de Buenos Aires, Argentina - Teléfono: +541148275957"
       }
     },
     {
       "nombre": "Recoleta",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11-5050-0147",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.buenosaires.gob.ar/salud/hospitales-y-establecimientos-de-salud/hospital-rivadavia"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4809-2002 / 2340",
+        "policia": "4807-5717 / 4807-1669",
+        "bomberos": "4823-5146 / 4826-4375",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos Bernardino Rivadavia",
+        "registro_civil": "4808-7300"
       }
     },
     {
       "nombre": "Villa Urquiza",
       "urls": {
         "municipal": "https://buenosaires.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "11-5050-0147 (Boti - Chat de la Ciudad para turnos)",
         "energia": "https://www.edenor.com/",
         "agua": "https://www.aysa.com.ar/",
-        "hospital": ""
+        "hospital": "https://buenosaires.gob.ar/salud/establecimientos-hospitales-y-centros-de-salud"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "4542-5552 / 2772 / 9279 (Hospital Pirovano)",
+        "policia": "4544-3330 / 4747 (Comisaría Vecinal 12C - Villa Urquiza)",
+        "bomberos": "4521-2222 (Destacamento Villa Urquiza)",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital General de Agudos Dr. Ignacio Pirovano",
+        "registro_civil": "4348-8912 (Sede Comunal 12, Holmberg 2584)"
       }
     }
   ],
@@ -350,57 +350,95 @@
       "nombre": "Capilla del Monte",
       "urls": {
         "municipal": "https://capilladelmonte.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/543548614515",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://capilladelmonte.gov.ar/",
         "hospital": "https://www.capilladelmonte.gov.ar/hospital.html"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(03548) 481856",
+        "hospital_guardia": "107",
+        "policia": "(03548) 486630",
+        "bomberos": "(03548) 481-448",
+        "defensa_civil": "(03548) 481-913",
+        "nombre_hospital": "Hospital Municipal Dr. Oscar A. Luqui",
+        "registro_civil": "(03548) 481341"
       }
     },
     {
       "nombre": "Cosquín",
       "urls": {
         "municipal": "https://cosquin.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5493541617989",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://cosquin.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/MunicipalidadCosquin/photos/gesti%C3%B3n-de-turnos-telef%C3%B3nicos-hospital-municipal-dr-armando-cimacosquinsomostodo/4425096547532476/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "3541-458022",
+        "hospital_guardia": "(03541) 4515...",
+        "policia": "03541-458160",
+        "bomberos": "(03541) 453030",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Dr. Armando Cima",
+        "registro_civil": "3541-454700"
       }
     },
     {
       "nombre": "Córdoba Capital",
       "urls": {
         "municipal": "https://www.cordoba.gob.ar/",
+        "whatsapp": "https://wa.me/5493516100444",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.aguascordobesas.com.ar/",
+        "hospital": "https://salud.cordoba.gob.ar/"
+      },
+      "contacto": {
+        "telefono_reclamos": "0800-888-0404",
+        "hospital_guardia": "107",
+        "policia": "092",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Municipal de Urgencias",
+        "registro_civil": "0351-433-7110"
+      }
+    },
+    {
+      "nombre": "Jesús María",
+      "urls": {
+        "municipal": "https://www.jesusmaria.gob.ar/",
         "whatsapp": "",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://www.aguascordobesas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/hospitaljesusmaria/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03525-420988",
+        "hospital_guardia": "03525-432000 / 432001",
+        "policia": "03525-422200 / 03525-422201",
+        "bomberos": "100 / 03525-425625",
+        "defensa_civil": "103 / 03525-424508",
+        "nombre_hospital": "Hospital Municipal de Jesús María",
+        "registro_civil": "03525-421876"
+      }
+    },
+    {
+      "nombre": "Colonia Caroya",
+      "urls": {
+        "municipal": "https://coloniacaroya.gob.ar/",
+        "whatsapp": "https://wa.me/5493525563216",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.aguascordobesas.com.ar/",
+        "hospital": "https://www.facebook.com/hospitalcaroya/"
+      },
+      "contacto": {
+        "telefono_reclamos": "03525-491111",
+        "hospital_guardia": "03525-493400 / 493401",
+        "policia": "03525-492222",
+        "bomberos": "100 / 03525-492100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Dr. Ricardo Ostertag",
+        "registro_civil": "03525-491100"
       }
     },
     {
@@ -426,95 +464,152 @@
       "nombre": "La Falda",
       "urls": {
         "municipal": "https://lafalda.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://walink.co/d7b83d",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://lafalda.gob.ar/",
+        "hospital": "https://www.lafalda.gob.ar/?q=content/numeros-contacto-del-hospital-municipal-la-falda"
+      },
+      "contacto": {
+        "telefono_reclamos": "103",
+        "hospital_guardia": "107 / 3548-425824",
+        "policia": "101 / 3548-426650 / 3548-426652",
+        "bomberos": "100 / 3548-422631",
+        "defensa_civil": "103 / 3548-15-562072",
+        "nombre_hospital": "Hospital Municipal La Falda",
+        "registro_civil": "3548-423331 / WhatsApp: 3548435311"
+      }
+    },
+    {
+      "nombre": "San Esteban",
+      "urls": {
+        "municipal": "https://www.sanesteban.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://www.aguascordobesas.com.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03549-496000",
+        "hospital_guardia": "03549-496100",
+        "policia": "03549-496200",
+        "bomberos": "100 / 03549-496300",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Municipal de San Esteban",
+        "registro_civil": "03549-496400"
+      }
+    },
+    {
+      "nombre": "Villa Giardino",
+      "urls": {
+        "municipal": "https://www.villagiardino.gob.ar/",
+        "whatsapp": "https://wa.me/5493548411978",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://villagiardino.gob.ar/",
+        "hospital": "https://www.facebook.com/hospitalvillagiardino/"
+      },
+      "contacto": {
+        "telefono_reclamos": "03548-480000",
+        "hospital_guardia": "03548-480100",
+        "policia": "03548-480200",
+        "bomberos": "100 / 03548-480300",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Municipal de Villa Giardino",
+        "registro_civil": "03548-480400"
+      }
+    },
+    {
+      "nombre": "Valle Hermoso",
+      "urls": {
+        "municipal": "https://www.vallehermoso.gob.ar/",
+        "whatsapp": "https://wa.me/5493548603205",
+        "energia": "https://www.epec.com.ar/",
+        "agua": "https://vallehermoso.gob.ar/",
+        "hospital": "https://www.vallehermoso.gob.ar/novedades/nuevo-servicio-en-el-caps-rene-favaloro"
+      },
+      "contacto": {
+        "telefono_reclamos": "03548-490000",
+        "hospital_guardia": "03548-490100",
+        "policia": "03548-490200",
+        "bomberos": "100 / 03548-490300",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Municipal de Valle Hermoso",
+        "registro_civil": "03548-490400"
       }
     },
     {
       "nombre": "Río Cuarto",
       "urls": {
         "municipal": "https://www.riocuarto.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5493584283673",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://www.emos.gov.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/people/Nuevo-Hospital/100064160046278/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800 444 5454",
+        "hospital_guardia": "0358 4678700",
+        "policia": "101",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Nuevo Hospital San Antonio de Padua",
+        "registro_civil": "0358 4671184"
       }
     },
     {
       "nombre": "San Francisco",
       "urls": {
         "municipal": "https://www.sanfrancisco.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/543564620794",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://www.sanfrancisco.gov.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/Hospital-J-B-Iturraspe-1453134058306345"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "103",
+        "hospital_guardia": "(03564) 443718/19",
+        "policia": "(03564) 439643 (local) / 911 (emergencias)",
+        "bomberos": "100 (emergencias) / (03564) 420000 (local)",
+        "defensa_civil": "(03564) 103",
+        "nombre_hospital": "Hospital Regional José Bernardo Iturraspe",
+        "registro_civil": "(03564) 439111 interno 5"
       }
     },
     {
       "nombre": "Villa Carlos Paz",
       "urls": {
         "municipal": "https://www.villacarlospaz.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "+54 3541 528386",
         "energia": "https://www.villacarlospaz.gov.ar/",
         "agua": "https://www.villacarlospaz.gov.ar/",
-        "hospital": ""
+        "hospital": "https://www.villacarlospaz.gov.ar/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "(03541) 422-300",
+        "policia": "03541 – 438211",
+        "bomberos": "(03541) 422222",
+        "defensa_civil": "105",
+        "nombre_hospital": "Hospital Municipal Dr. Gumersindo Sayago",
+        "registro_civil": "(03541) 436443"
       }
     },
     {
       "nombre": "Villa María",
       "urls": {
-        "municipal": "villamaria.gob.ar/",
+        "municipal": "https://villamaria.gob.ar/",
         "whatsapp": "",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://villamaria.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/HospitalRegionalPasteur/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "(0353) 461-6100",
+        "policia": "(0353) 461-9097 / 101",
+        "bomberos": "(0353) 453-3300 / 453-3400 / 100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Regional Dr. Luis Pasteur",
+        "registro_civil": "+543534618100"
       }
     }
   ],
@@ -523,19 +618,19 @@
       "nombre": "Rafaela",
       "urls": {
         "municipal": "https://www.rafaela.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5493492696244",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://www.aguassantafesinas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.santafe.gov.ar/index.php/web/content/view/full/258166/(subtema)/114560"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "03492 - 290500",
+        "policia": "03492 425063",
+        "bomberos": "03492 502102",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Regional Dr. Jaime Ferré",
+        "registro_civil": "+543492422149"
       }
     },
     {
@@ -548,12 +643,12 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
+        "telefono_reclamos": "03482-472000",
+        "hospital_guardia": "03482-420012 / 420042",
+        "policia": "911 / 03482-420069 (Comisaría I)",
+        "bomberos": "100 / 03482-420019",
         "defensa_civil": "",
-        "nombre_hospital": "",
+        "nombre_hospital": "Hospital Central Reconquista",
         "registro_civil": ""
       }
     },
@@ -561,19 +656,19 @@
       "nombre": "Rosario",
       "urls": {
         "municipal": "https://www.rosario.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5493415440147",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://www.aguassantafesinas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.rosario.gob.ar/inicio/salud/centros-de-salud-y-hospitales"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "147",
+        "hospital_guardia": "107",
+        "policia": "101",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Provincial de Rosario",
+        "registro_civil": "0341-4724600"
       }
     },
     {
@@ -599,19 +694,19 @@
       "nombre": "Santa Fe Capital",
       "urls": {
         "municipal": "https://santafeciudad.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://acortar.link/q72N7m",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://www.aguassantafesinas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/comunidadhospitalcullen/?locale=es_LA"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-777-5000",
+        "hospital_guardia": "107",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "(0342)-4506736/4506737",
+        "nombre_hospital": "Hospital Dr. José María Cullen",
+        "registro_civil": "+543424815599"
       }
     },
     {
@@ -664,32 +759,32 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
+        "telefono_reclamos": "0800-222-0857",
+        "hospital_guardia": "(0261) 413 3890 (Hospital Dr. Ramón Carrillo)",
+        "policia": "911",
+        "bomberos": "(0261) 4485555 / 4447454",
         "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "nombre_hospital": "Hospital Dr. Ramón Carrillo",
+        "registro_civil": "148 opción 5 (para turnos)"
       }
     },
     {
       "nombre": "Luján de Cuyo",
       "urls": {
         "municipal": "https://lujandecuyo.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5492615656170",
         "energia": "https://www.edemsa.com/",
         "agua": "https://lujandecuyo.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.lujandecuyo.gob.ar/hospital-de-lujan-de-cuyo/"
       },
       "contacto": {
-        "telefono_reclamos": "",
+        "telefono_reclamos": "0800-222-7800",
         "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "policia": "911",
+        "bomberos": "(0261) 4980999",
+        "defensa_civil": "2612124022 / 4987647",
+        "nombre_hospital": "Hospital de Luján de Cuyo",
+        "registro_civil": "+542614980308"
       }
     },
     {
@@ -715,19 +810,19 @@
       "nombre": "Mendoza Capital",
       "urls": {
         "municipal": "https://ciudaddemendoza.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "261 468-4551",
         "energia": "https://www.edemsa.com/",
         "agua": "https://www.aysaam.com.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-222-CIUDAD (248323) o 147",
+        "hospital_guardia": "(261) 3855570 / (261) 4490684",
+        "policia": "911",
+        "bomberos": "911 (Emergencias) / (0261) 4203317 (Cuartel Central Mendoza)",
+        "defensa_civil": "911",
+        "nombre_hospital": "Hospital Central",
+        "registro_civil": "Av. Peltier 351, Casa de Gobierno, Mendoza Capital (Dirección General) / 148 (opción 5) (Turnos) / (0261) 4492200 / 4492245 (General)"
       }
     },
     {
@@ -740,12 +835,12 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
+        "telefono_reclamos": "0800-222-0600",
+        "hospital_guardia": "911",
+        "policia": "911, +54 260-4431111 (Policía Federal)",
+        "bomberos": "911, 0260-4424417 / 4420090 / 4425615",
+        "defensa_civil": "4325012, 2604807949",
+        "nombre_hospital": "Hospital Teodoro Juan Schestakow",
         "registro_civil": ""
       }
     }
@@ -761,12 +856,12 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
+        "telefono_reclamos": "0381-426-8175",
+        "hospital_guardia": "4268177",
+        "policia": "0381-4263750",
+        "bomberos": "0381-154419118",
+        "defensa_civil": "(0381)426-8152",
+        "nombre_hospital": "Policlínica Banda del Río Salí",
         "registro_civil": ""
       }
     },
@@ -777,16 +872,16 @@
         "whatsapp": "",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": ""
+        "hospital": "https://msptucuman.gov.ar/hospitales/hospital-regional-de-concepcion-dr-miguel-belascuain/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03865-425844",
+        "hospital_guardia": "107",
+        "policia": "03865-422832",
+        "bomberos": "03865-425252",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Regional de Concepción \"Dr. Miguel Belascuain\"",
+        "registro_civil": "24 de Septiembre 1249, Concepción, Tucumán."
       }
     },
     {
@@ -796,54 +891,54 @@
         "whatsapp": "",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": ""
+        "hospital": "www.msptucuman.gov.ar"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(0381) 4516500",
+        "hospital_guardia": "107",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Centro de Salud Zenón Santillán",
+        "registro_civil": "(381) 4309316"
       }
     },
     {
       "nombre": "Tafí Viejo",
       "urls": {
         "municipal": "http://tafiviejo.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/3815317097",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": ""
+        "hospital": "www.msptucuman.gob.ar"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "461-3344",
+        "hospital_guardia": "107 (Emergencias SIPROSA), Policlínica Municipal: 381-2594060 o 4617826",
+        "policia": "911 (Emergencias), Comisaría Tafí Centro: 4613648",
+        "bomberos": "100 o 4617975",
+        "defensa_civil": "103",
+        "nombre_hospital": "Policlínica Municipal, Hospital de Lomas de Tafí",
+        "registro_civil": "4610091, Turnos online: www.regciviltucuman.gob.ar"
       }
     },
     {
       "nombre": "Yerba Buena",
       "urls": {
         "municipal": "https://yerbabuena.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://whatsapp.com/channel/0029VaPuaTEGzzKJ3DKv5b15",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.yerbabuena.gob.ar/secciones/carrillo"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(381) 4533636",
+        "hospital_guardia": "0381 4533632",
+        "policia": "4251045 (Comisaría de Yerba Buena)",
+        "bomberos": "(0381) 4252670",
+        "defensa_civil": "103",
+        "nombre_hospital": "Centro de Salud Municipal Dr. Ramón Carrillo",
+        "registro_civil": "Av Aconquija 2021 Local 7, Yerba Buena, Tucumán"
       }
     }
   ],
@@ -858,50 +953,50 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(03442) 427626",
+        "hospital_guardia": "(03442) 443900",
+        "policia": "101 / (03442) 422222",
+        "bomberos": "100 / (03442) 423333",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Justo José de Urquiza",
+        "registro_civil": "(03442) 425562"
       }
     },
     {
       "nombre": "Concordia",
       "urls": {
         "municipal": "https://www.concordia.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "3454247796",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://www.concordia.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.hospitalmasvernat.gob.ar"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "105",
+        "hospital_guardia": "0345-4251135",
+        "policia": "101",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Delicia Concepción Masvernat",
+        "registro_civil": "0345-4214297"
       }
     },
     {
       "nombre": "Gualeguaychú",
       "urls": {
         "municipal": "https://gualeguaychu.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "+54 9 3446 50-3196",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://gualeguaychu.gov.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
+        "telefono_reclamos": "+54 9 3446 50-3196",
+        "hospital_guardia": "03446-433669",
+        "policia": "03446-422222",
+        "bomberos": "03446-424004",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Centenario de Gualeguaychú",
         "registro_civil": ""
       }
     },
@@ -909,19 +1004,19 @@
       "nombre": "Paraná",
       "urls": {
         "municipal": "https://www.parana.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/543435180147",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://www.parana.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.hospitalsanmartin.gob.ar/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
+        "telefono_reclamos": "147",
+        "hospital_guardia": "(0343) 4234545",
+        "policia": "0343 420 6202",
+        "bomberos": "0343-422699",
         "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "nombre_hospital": "Hospital General San Martín",
+        "registro_civil": "(0343) 4206707"
       }
     }
   ],
@@ -936,13 +1031,13 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "3751300352",
+        "hospital_guardia": "03751 - 422334 (Hospital SAMIC Eldorado)",
+        "policia": "03751 - 431434 (Unidad Regional)",
+        "bomberos": "(3751) 4-21111",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital SAMIC Eldorado",
+        "registro_civil": "(3751) 433212"
       }
     },
     {
@@ -955,13 +1050,13 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(3755) 454100",
+        "hospital_guardia": "(3755) 421226",
+        "policia": "(03755) 421176",
+        "bomberos": "(03755) 426298",
+        "defensa_civil": "3755-230004",
+        "nombre_hospital": "Hospital SAMIC Oberá",
+        "registro_civil": "TM 3755456431 - TT 3755435926 (CDR de 100 Hectáreas)"
       }
     },
     {
@@ -971,16 +1066,16 @@
         "whatsapp": "",
         "energia": "https://www.emsa.com.ar/",
         "agua": "https://www.samsa.com.ar/",
-        "hospital": ""
+        "hospital": "https://hospitalmadariaga.org/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-888-2483",
+        "hospital_guardia": "+54 376 4443777",
+        "policia": "911 (Emergencias), +54 (0376) 4447646 (Jefatura de Policía)",
+        "bomberos": "100 (Emergencias), 0376-4595199 (Bomberos Voluntarios Posadas)",
+        "defensa_civil": "103 (Emergencias), +54 (0376) 4447636",
+        "nombre_hospital": "Hospital Escuela de Agudos \"Dr. Ramón Madariaga\"",
+        "registro_civil": "https://www.registrocivil.misiones.gov.ar/"
       }
     },
     {
@@ -1092,13 +1187,13 @@
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03731-422747",
+        "hospital_guardia": "3644-420200",
+        "policia": "3644-420100, 911 (Emergencias)",
+        "bomberos": "03731-442122, 100 (Emergencias)",
+        "defensa_civil": "103 (Emergencias), 3624279868",
+        "nombre_hospital": "Hospital Enrique V. de Llamas",
+        "registro_civil": "3731-494847"
       }
     },
     {
@@ -1156,6 +1251,219 @@
         "defensa_civil": "",
         "nombre_hospital": "",
         "registro_civil": ""
+      }
+    }
+  ],
+  "chubut": [
+    {
+      "nombre": "Comodoro Rivadavia",
+      "urls": {
+        "municipal": "https://www.comodoro.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.serc.electrica.gob.ar/",
+        "agua": "https://www.serc.electrica.gob.ar/",
+        "hospital": "https://www.facebook.com/HospitalRegionalComodoro/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0297-455-3200",
+        "policia": "911",
+        "bomberos": "100 / 0297-447-2222",
+        "defensa_civil": "103 / 0297-447-3333",
+        "nombre_hospital": "Hospital Regional de Comodoro Rivadavia",
+        "registro_civil": "0297-447-4000"
+      }
+    },
+    {
+      "nombre": "Puerto Madryn",
+      "urls": {
+        "municipal": "https://www.madryn.gob.ar//",
+        "whatsapp": "",
+        "energia": "https://www.serc.electrica.gob.ar/",
+        "agua": "https://www.serc.electrica.gob.ar/",
+        "hospital": "https://www.facebook.com/hospitalandresisola/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0280-445-4000",
+        "policia": "911",
+        "bomberos": "100 / 0280-447-2222",
+        "defensa_civil": "103 / 0280-447-3333",
+        "nombre_hospital": "Hospital Zonal Andrés Ísola",
+        "registro_civil": "0280-445-5000"
+      }
+    },
+    {
+      "nombre": "Rawson",
+      "urls": {
+        "municipal": "https://rawson-chubut.com.ar/",
+        "whatsapp": "",
+        "energia": "https://www.serc.electrica.gob.ar/",
+        "agua": "https://www.serc.electrica.gob.ar/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0280-448-3000",
+        "policia": "911",
+        "bomberos": "100 / 0280-448-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Subzonal de Rawson",
+        "registro_civil": "0280-448-4000"
+      }
+    },
+    {
+      "nombre": "Trelew",
+      "urls": {
+        "municipal": "https://trelew.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.serc.electrica.gob.ar/",
+        "agua": "https://www.serc.electrica.gob.ar/",
+        "hospital": "https://www.facebook.com/hospitaladolfomargalot/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0280-442-2000",
+        "policia": "911",
+        "bomberos": "100 / 0280-442-2222",
+        "defensa_civil": "103 / 0280-442-3333",
+        "nombre_hospital": "Hospital Zonal Adolfo Margalot",
+        "registro_civil": "0280-442-5000"
+      }
+    }
+  ],
+  "santacruz": [
+    {
+      "nombre": "Caleta Olivia",
+      "urls": {
+        "municipal": "https://caletaolivia.gov.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": "https://www.facebook.com/hospitalzonaldecaletaolivia/?locale=es_LA"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0297-483-3000",
+        "policia": "911",
+        "bomberos": "100 / 0297-483-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Distrital de Caleta Olivia",
+        "registro_civil": "0297-483-4000"
+      }
+    },
+    {
+      "nombre": "Cañadón Seco",
+      "urls": {
+        "municipal": "https://www.facebook.com/p/Comisi%C3%B3n-de-Fomento-Ca%C3%B1adon-Seco-100063689642649/?locale=es_LA",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0297-488-2000",
+        "policia": "911",
+        "bomberos": "100 / 0297-488-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital de Cañadón Seco",
+        "registro_civil": "0297-488-3000"
+      }
+    },
+    {
+      "nombre": "El Chaltén",
+      "urls": {
+        "municipal": "https://elchalten.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": "https://www.facebook.com/puestosanitario.elchalten/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 02962-493-000 / 02966-639230",
+        "policia": "911 / 493-003/101",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Puesto Sanitario de El Chaltén",
+        "registro_civil": "02962 493105. Registro Civil El Chaltén Oficina Seccional 2756. Av. Lago del Desierto 341. Z9301XAF"
+      }
+    },
+    {
+      "nombre": "Las Heras",
+      "urls": {
+        "municipal": "https://municipiolasherassantacruz.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": "https://www.facebook.com/hospitaldistrital.lasheras/?locale=es_LA"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0297-4853000/ Tel Fijo: 0297-4976106/Celular: 0297-4525666",
+        "policia": "911 / 0297-485-1000",
+        "bomberos": "100 / 0297-485-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Distrital Las Heras",
+        "registro_civil": "0297-485-4000"
+      }
+    },
+    {
+      "nombre": "Perito Moreno",
+      "urls": {
+        "municipal": "https://peritomoreno.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": "https://www.hospitalpm.com/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 02963-432-000",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital de Perito Moreno",
+        "registro_civil": "02963-432-100"
+      }
+    },
+    {
+      "nombre": "Pico Truncado",
+      "urls": {
+        "municipal": "https://picotruncado.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": ""
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 0297-487-3000",
+        "policia": "911",
+        "bomberos": "100 / 0297-487-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital de Pico Truncado",
+        "registro_civil": "0297-487-4000"
+      }
+    },
+    {
+      "nombre": "Río Gallegos",
+      "urls": {
+        "municipal": "https://riogallegos.gob.ar/",
+        "whatsapp": "",
+        "energia": "https://www.servicios.publicos.coop/",
+        "agua": "https://www.servicios.publicos.coop/",
+        "hospital": "https://www.facebook.com/hospitalregionalriogallegos/"
+      },
+      "contacto": {
+        "telefono_reclamos": "148 / 147",
+        "hospital_guardia": "107 / 02966-437-000",
+        "policia": "911",
+        "bomberos": "100 / 02966-437-2222",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Regional de Río Gallegos",
+        "registro_civil": "02966-437-100"
       }
     }
   ]
