@@ -1,6 +1,25 @@
 {
   "bsas": [
     {
+      "nombre": "Miramar",
+      "urls": {
+        "municipal": "https://www.miramar.gob.ar/",
+        "whatsapp": "0911-154-000-000",
+        "energia": "https://www.edea.com.ar/",
+        "agua": "https://www.osmgp.gov.ar/",
+        "hospital": "https://www.facebook.com/MunGralAlvarado/photos/-informaci%C3%B3n-importantenecesit%C3%A1s-turno-para-el-hospital-municipal-dr-marino-cass/1120657516754617/"
+      },
+      "contacto": {
+        "telefono_reclamos": "103",
+        "hospital_guardia": "02291-4563660 / 02291-431253",
+        "policia": "911, 02291 42-0613 (Comisaría Miramar)",
+        "bomberos": "100, 02291 42-1611 (Bomberos Voluntarios de Miramar)",
+        "defensa_civil": "+54 (291) 4563660",
+        "nombre_hospital": "Hospital Municipal Dr. Marino Cassano, Diag. J. M. Dupuy 1550, B7607 Miramar",
+        "registro_civil": "02291 42-0903 (Registro Civil de Miramar, Calle 17 1692-1626 )"
+      }
+    },
+    {
       "nombre": "Bahía Blanca",
       "urls": {
         "municipal": "https://www.bahiablanca.gob.ar/",

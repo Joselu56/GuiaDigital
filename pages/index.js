@@ -11,9 +11,8 @@ import { buscarLocalidad, obtenerProvinciaId } from "../lib/localidadService";
 const provinciasArray = provinciasData.provincias || [];
 
 // Mapeo de localidades por provincia para el selector (visual)
-// Este es solo para el selector, la información real viene de localidades.json
 const MUNIS = {
-  bsas: ["La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Isidro","Tigre","La Reja"],
+  bsas: ["Miramar","La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Isidro","Tigre","La Reja"],
   caba: ["Palermo","Belgrano","Flores","Caballito","Recoleta","Balvanera","Villa Urquiza"],
   cba:  ["Córdoba Capital","Río Cuarto","Villa María","San Francisco","Villa Carlos Paz","Cosquín","La Cumbre","La Falda","Capilla del Monte","Jesús María","Colonia Caroya","San Esteban","Villa Giardino","Valle Hermoso"],
   sf:   ["Rosario","Santa Fe Capital","Venado Tuerto","Rafaela","San Lorenzo","Reconquista"],
@@ -171,67 +170,318 @@ const GUIDE_AREA = {
   qr: "vida", compras: "vida", transporte: "vida", whatsapp: "vida",
 };
 
+// ============================================================
+// FUNCIÓN PARA LIMPIAR TEXTO PARA VOZ (solo elimina URLs y correos, conserva todo lo demás)
+// ============================================================
+function limpiarTextoParaVoz(texto) {
+  if (!texto) return "";
+  
+  let limpio = texto;
+  
+  // Eliminar URLs completas (http, https, www, dominios)
+  limpio = limpio.replace(/\b(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?\b/gi, '');
+  
+  // Eliminar direcciones de correo electrónico
+  limpio = limpio.replace(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/gi, '');
+  
+  // Conservar números de teléfono, direcciones, nombres de hospitales, etc.
+  // Solo eliminar caracteres especiales que no aportan
+  limpio = limpio.replace(/[*_`~]/g, '');
+  
+  // Limpiar múltiples espacios
+  limpio = limpio.replace(/\s+/g, ' ').trim();
+  
+  return limpio;
+}
+
+// ============================================================
+// FUNCIÓN PARA CONSTRUIR TEXTO COMPLETO DE INFORMACIÓN DE LOCALIDAD
+// ============================================================
+function construirTextoLocalidad(info) {
+  if (!info) return "";
+  
+  let texto = `Información de ${info.nombre}. `;
+  
+  if (info.urls?.municipal && info.urls.municipal !== "") {
+    texto += `Sitio web municipal: ${info.urls.municipal}. `;
+  }
+  if (info.urls?.whatsapp && info.urls.whatsapp !== "") {
+    texto += `WhatsApp municipal disponible. `;
+  }
+  if (info.urls?.energia && info.urls.energia !== "") {
+    texto += `Sitio web de energía eléctrica disponible. `;
+  }
+  if (info.urls?.agua && info.urls.agua !== "") {
+    texto += `Sitio web de agua corriente disponible. `;
+  }
+  if (info.urls?.hospital && info.urls.hospital !== "") {
+    texto += `Sitio web del hospital disponible. `;
+  }
+  if (info.contacto?.nombre_hospital && info.contacto.nombre_hospital !== "") {
+    texto += `Hospital: ${info.contacto.nombre_hospital}. `;
+  }
+  if (info.contacto?.hospital_guardia && info.contacto.hospital_guardia !== "") {
+    texto += `Hospital guardia: ${info.contacto.hospital_guardia}. `;
+  }
+  if (info.contacto?.telefono_reclamos && info.contacto.telefono_reclamos !== "") {
+    texto += `Teléfono de reclamos: ${info.contacto.telefono_reclamos}. `;
+  }
+  if (info.contacto?.policia && info.contacto.policia !== "") {
+    texto += `Policía: ${info.contacto.policia}. `;
+  }
+  if (info.contacto?.bomberos && info.contacto.bomberos !== "") {
+    texto += `Bomberos: ${info.contacto.bomberos}. `;
+  }
+  if (info.contacto?.defensa_civil && info.contacto.defensa_civil !== "") {
+    texto += `Defensa Civil: ${info.contacto.defensa_civil}. `;
+  }
+  if (info.contacto?.registro_civil && info.contacto.registro_civil !== "") {
+    texto += `Registro Civil: ${info.contacto.registro_civil}. `;
+  }
+  
+  return texto;
+}
+
+// ============================================================
+// FUNCIÓN PARA SELECCIONAR VOZ ARGENTINA
+// ============================================================
+async function seleccionarVozArgentina() {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) {
+      resolve(null);
+      return;
+    }
+    
+    const cargarVoces = () => {
+      const voces = window.speechSynthesis.getVoices();
+      
+      const patronesArgentinos = [
+        'diego', 'mora', 'agustin', 'valeria', 'tomas',
+        'argentina', 'argentine', 'es-ar', 'es_AR', 'latino',
+        'spanish latin', 'latin american', 'mexican'
+      ];
+      
+      let vozArgentina = null;
+      for (const patron of patronesArgentinos) {
+        vozArgentina = voces.find(v => 
+          v.lang === 'es-AR' || 
+          v.lang === 'es-MX' || 
+          v.lang === 'es-419' ||
+          (v.lang.startsWith('es') && v.name.toLowerCase().includes(patron))
+        );
+        if (vozArgentina) break;
+      }
+      
+      if (!vozArgentina) {
+        vozArgentina = voces.find(v => v.lang.startsWith('es'));
+      }
+      
+      resolve(vozArgentina || null);
+    };
+    
+    const voces = window.speechSynthesis.getVoices();
+    if (voces.length > 0) {
+      cargarVoces();
+    } else {
+      window.speechSynthesis.onvoiceschanged = cargarVoces;
+      setTimeout(cargarVoces, 500);
+    }
+  });
+}
+
+// ============================================================
+// HOOK PARA SÍNTESIS DE VOZ (TEXT-TO-SPEECH) CON VOZ ARGENTINA
+// ============================================================
+function useSpeechSynthesis() {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isSupported, setIsSupported] = useState(true);
+  const utteranceRef = useRef(null);
+  const vozArgentinaRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) {
+      setIsSupported(false);
+      return;
+    }
+    
+    seleccionarVozArgentina().then(voz => {
+      vozArgentinaRef.current = voz;
+    });
+    
+    return () => {
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  const speak = async (text, options = {}) => {
+    if (!isSupported || !text) return;
+    
+    const textoLimpio = limpiarTextoParaVoz(text);
+    if (!textoLimpio || textoLimpio.length === 0) return;
+    
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
+    
+    const utterance = new SpeechSynthesisUtterance(textoLimpio);
+    utteranceRef.current = utterance;
+    
+    utterance.lang = options.lang || 'es-AR';
+    
+    if (vozArgentinaRef.current) {
+      utterance.voice = vozArgentinaRef.current;
+    }
+    
+    utterance.rate = options.rate || 0.85;
+    utterance.pitch = options.pitch || 1.0;
+    utterance.volume = options.volume || 1;
+    
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => {
+      setIsSpeaking(false);
+      setIsPaused(false);
+    };
+    utterance.onerror = () => {
+      setIsSpeaking(false);
+      setIsPaused(false);
+    };
+    utterance.onpause = () => setIsPaused(true);
+    utterance.onresume = () => setIsPaused(false);
+    
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const stop = () => {
+    if (!isSupported) return;
+    window.speechSynthesis.cancel();
+    setIsSpeaking(false);
+    setIsPaused(false);
+  };
+
+  const pause = () => {
+    if (!isSupported || !window.speechSynthesis.speaking) return;
+    window.speechSynthesis.pause();
+  };
+
+  const resume = () => {
+    if (!isSupported) return;
+    window.speechSynthesis.resume();
+  };
+
+  return { speak, stop, pause, resume, isSpeaking, isPaused, isSupported };
+}
+
+// ============================================================
+// COMPONENTE BOTÓN DE VOZ
+// ============================================================
+function VoiceButton({ text, label = "Escuchar", size = "normal", onSpeakStart, onSpeakEnd }) {
+  const { speak, stop, isSpeaking, isSupported } = useSpeechSynthesis();
+  
+  if (!isSupported) return null;
+  
+  const handleClick = () => {
+    if (isSpeaking) {
+      stop();
+      if (onSpeakEnd) onSpeakEnd();
+    } else {
+      speak(text);
+      if (onSpeakStart) onSpeakStart();
+    }
+  };
+  
+  const buttonSize = size === "large" ? { width: 44, height: 44, fontSize: 20 } : 
+                     size === "small" ? { width: 28, height: 28, fontSize: 12 } : 
+                     { width: 36, height: 36, fontSize: 16 };
+  
+  return (
+    <button
+      onClick={handleClick}
+      aria-label={isSpeaking ? "Detener lectura" : "Escuchar texto"}
+      title={isSpeaking ? "Detener" : "Escuchar"}
+      style={{
+        background: isSpeaking ? "#D4580A" : "#1B6B3A",
+        border: "none",
+        borderRadius: "50%",
+        cursor: "pointer",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#fff",
+        transition: "all 0.2s",
+        ...buttonSize
+      }}
+    >
+      <i className={`ti ${isSpeaking ? "ti-volume" : "ti-volume"}`} style={{ fontSize: buttonSize.fontSize }} aria-hidden="true"></i>
+    </button>
+  );
+}
+
+// ============================================================
+// COMPONENTE PARA MOSTRAR GUÍA CON BOTÓN DE VOZ
+// ============================================================
+function GuideWithVoice({ guide, sz }) {
+  if (!guide) return null;
+  
+  const fullText = `${guide.title}. ${guide.steps.map((s, i) => `Paso ${i + 1}: ${s.t}. ${s.d}`).join('. ')}`;
+  
+  return (
+    <div>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: ".7rem", flexWrap: "wrap" }}>
+        <p style={{ fontSize: sz ? 18 : 16, fontWeight: 700, color: "#1a1a18", margin: 0 }}>{guide.title}</p>
+        <VoiceButton text={fullText} label="Escuchar guía completa" size={sz ? "large" : "normal"} />
+      </div>
+      <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8, marginBottom: "1rem" }}>
+        {guide.steps.map((s, i) => {
+          const stepText = `${s.t}. ${s.d}`;
+          return (
+            <li key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "#F7F6F1", borderRadius: 8, padding: ".7rem .9rem" }}>
+              <div style={{ width: 30, height: 30, minWidth: 30, background: "#1B6B3A", color: "#fff", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, marginTop: 1 }}>{i + 1}</div>
+              <div style={{ flex: 1 }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+                  <strong style={{ fontSize: sz ? 17 : 15, fontWeight: 700, display: "block", marginBottom: 2, color: "#1a1a18" }}>{s.t}</strong>
+                  <VoiceButton text={stepText} size="small" />
+                </div>
+                <span style={{ fontSize: sz ? 16 : 14, color: "#5F5E5A", lineHeight: 1.5 }}>{s.d}</span>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 /**
  * Función para seleccionar el tutorial del día con sistema de prioridades
- * Los videos con mayor prioridad tienen más chances de aparecer
- * 
- * Configuración de prioridades:
- * - prioridad 3: videos destacados (aparecen 3 veces más)
- * - prioridad 2: videos importantes (aparecen 2 veces más)
- * - prioridad 1: videos normales (aparecen 1 vez)
- * - prioridad null/undefined: prioridad base 1
  */
 function seleccionarTutorialDelDia(videosArray) {
   if (!videosArray || videosArray.length === 0) return null;
   
-  // Definir pesos/prioridades para cada video según su ID
-  // Los valores más altos = más chances de aparecer
-  // Puedes modificar esta configuración según tus necesidades
   const prioridades = {
-    // Prioridad ALTA (3 veces más chances) - Videos destacados
-    "v12": 3,  // videollamada con nietos
-    "v2": 3,  // turno PAMI
-    "v5": 3,  // pago con QR
-    
-    // Prioridad MEDIA (2 veces más chances)
-    "v3": 2,  // reiniciar router
-    "v4": 2,  // ANSES
-    "v1": 2, // WhatsApp tips
-    
-    // Los que no están en la lista tienen prioridad 1
+    "v1": 3, "v2": 3, "v5": 3,
+    "v3": 2, "v4": 2, "v12": 2,
   };
   
-  // También puedes priorizar por categoría
   const prioridadPorCategoria = {
-    "salud": 2,    // temas de salud tienen prioridad alta
-    "celular": 1.5, // temas de celular prioridad media
-    // "vida": 1,
-    // "estado": 1,
-    // "general": 1,
+    "salud": 2, "celular": 1.5,
   };
   
-  // Crear array ponderado para la selección
   const weightedVideos = [];
   
   videosArray.forEach(video => {
-    // Calcular peso base
     let peso = prioridades[video.id] || 1;
-    
-    // Ajustar por categoría si existe
     if (video.categoria && prioridadPorCategoria[video.categoria]) {
       peso = peso * prioridadPorCategoria[video.categoria];
     }
-    
-    // Redondear y asegurar mínimo 1
     peso = Math.max(1, Math.round(peso));
-    
-    // Agregar el video tantas veces como su peso
     for (let i = 0; i < peso; i++) {
       weightedVideos.push(video);
     }
   });
   
-  // Seleccionar aleatoriamente del array ponderado
   const randomIndex = Math.floor(Math.random() * weightedVideos.length);
   return weightedVideos[randomIndex];
 }
@@ -241,6 +491,9 @@ function InfoLocalidad({ localidadInfo, sz }) {
   if (!localidadInfo) return null;
 
   const info = localidadInfo;
+  
+  // Construir texto completo para voz
+  const voiceText = construirTextoLocalidad(info);
 
   return (
     <div style={{
@@ -251,13 +504,15 @@ function InfoLocalidad({ localidadInfo, sz }) {
       marginBottom: "0.25rem",
       border: "1px solid rgba(27,107,58,0.25)"
     }}>
-      <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, color: "#0F5C2E", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: 8 }}>
-        <i className="ti ti-info-circle" style={{ fontSize: 18 }} aria-hidden="true"></i>
-        Información de {info.nombre}
-      </p>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: "0.5rem" }}>
+        <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, color: "#0F5C2E", margin: 0, display: "flex", alignItems: "center", gap: 8 }}>
+          <i className="ti ti-info-circle" style={{ fontSize: 18 }} aria-hidden="true"></i>
+          Información de {info.nombre}
+        </p>
+        <VoiceButton text={voiceText} size={sz ? "large" : "normal"} />
+      </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {/* URLs */}
         {info.urls?.municipal && info.urls.municipal !== "" && (
           <a href={info.urls.municipal} target="_blank" rel="noopener noreferrer" style={{ color: "#1B6B3A", textDecoration: "none", fontSize: sz ? 16 : 14, display: "flex", alignItems: "center", gap: 8 }}>
             <i className="ti ti-building" style={{ fontSize: 16 }}></i> <span>🏛️ Sitio web municipal</span>
@@ -288,7 +543,6 @@ function InfoLocalidad({ localidadInfo, sz }) {
           </a>
         )}
 
-        {/* Contactos */}
         {info.contacto?.nombre_hospital && info.contacto.nombre_hospital !== "" && (
           <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <i className="ti ti-hospital" style={{ fontSize: 16 }}></i>
@@ -321,9 +575,7 @@ function InfoLocalidad({ localidadInfo, sz }) {
           <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <i className="ti ti-shield" style={{ fontSize: 16 }}></i>
             <span>👮 Policía: </span>
-            <a href={`tel:${info.contacto.policia.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
-              {info.contacto.policia}
-            </a>
+            <span style={{ color: "#D4580A", fontWeight: 700 }}>{info.contacto.policia}</span>
           </div>
         )}
 
@@ -331,9 +583,7 @@ function InfoLocalidad({ localidadInfo, sz }) {
           <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <i className="ti ti-flame" style={{ fontSize: 16 }}></i>
             <span>🚒 Bomberos: </span>
-            <a href={`tel:${info.contacto.bomberos.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
-              {info.contacto.bomberos}
-            </a>
+            <span style={{ color: "#D4580A", fontWeight: 700 }}>{info.contacto.bomberos}</span>
           </div>
         )}
 
@@ -341,9 +591,7 @@ function InfoLocalidad({ localidadInfo, sz }) {
           <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <i className="ti ti-ambulance" style={{ fontSize: 16 }}></i>
             <span>🆘 Defensa Civil: </span>
-            <a href={`tel:${info.contacto.defensa_civil.replace(/[^0-9\-/]/g, '')}`} style={{ color: "#D4580A", fontWeight: 700, textDecoration: "none" }}>
-              {info.contacto.defensa_civil}
-            </a>
+            <span style={{ color: "#D4580A", fontWeight: 700 }}>{info.contacto.defensa_civil}</span>
           </div>
         )}
 
@@ -351,12 +599,26 @@ function InfoLocalidad({ localidadInfo, sz }) {
           <div style={{ fontSize: sz ? 16 : 14, color: "#0F5C2E", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
             <i className="ti ti-file-text" style={{ fontSize: 16 }}></i>
             <span>📄 Registro Civil: </span>
-            <span style={{ color: "#D4580A" }}>{info.contacto.registro_civil}</span>
+            <span style={{ color: "#D4580A", fontWeight: 700 }}>{info.contacto.registro_civil}</span>
           </div>
         )}
       </div>
     </div>
   );
+}
+
+// Función auxiliar para hacer scroll y posicionar el elemento en la parte superior del chat
+function scrollToChatTop(element, chatContainer) {
+  if (!element || !chatContainer) return;
+  
+  // Calcular la posición del elemento dentro del contenedor del chat
+  const elementOffsetTop = element.offsetTop;
+  
+  // Scroll para que el elemento quede en la parte superior con un pequeño margen
+  chatContainer.scrollTo({
+    top: elementOffsetTop - 15,
+    behavior: 'smooth'
+  });
 }
 
 export default function Home() {
@@ -376,11 +638,12 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   
   const chatRef = useRef(null);
+  const chatContainerRef = useRef(null);
   const ayudaSectionRef = useRef(null); 
   const videosSectionRef = useRef(null);
+  const panelContainerRef = useRef(null);
   const ultimoMensajeRef = useRef(null);
 
-  // Detectar si es dispositivo móvil
   useEffect(() => {
     const detectMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -392,30 +655,21 @@ export default function Home() {
     return () => window.removeEventListener('resize', detectMobile);
   }, []);
 
-  // Seleccionar tutorial del día con rotación diaria y prioridades
   useEffect(() => {
     if (!videos || videos.length === 0) return;
     
-    // Obtener la fecha actual en formato YYYY-MM-DD
     const today = new Date().toISOString().split('T')[0];
-    
-    // Intentar recuperar el tutorial guardado para hoy
     const storedTutorial = localStorage.getItem(`tutorial_del_dia_${today}`);
     
     if (storedTutorial) {
-      // Si ya hay un tutorial guardado para hoy, usarlo
       setTutorialDelDia(JSON.parse(storedTutorial));
     } else {
-      // Seleccionar nuevo tutorial usando el sistema de prioridades
       const selectedVideoObj = seleccionarTutorialDelDia(videos);
       setTutorialDelDia(selectedVideoObj);
-      
-      // Guardar para hoy
       localStorage.setItem(`tutorial_del_dia_${today}`, JSON.stringify(selectedVideoObj));
     }
   }, [videos]);
 
-  // Cargar información de la localidad cuando se selecciona municipio
   useEffect(() => {
     if (!municipio || !provincia) {
       setLocalidadInfo(null);
@@ -456,34 +710,33 @@ export default function Home() {
       reply = reply.replace(/\\n/g, "\n").replace(/\\r/g, "");
       
       setMessages([...newMessages, { role: "assistant", content: reply }]);
+      
+      // Scroll al último mensaje (la respuesta) para que se vea el inicio
+      setTimeout(() => {
+        if (ultimoMensajeRef.current && chatContainerRef.current) {
+          scrollToChatTop(ultimoMensajeRef.current, chatContainerRef.current);
+        }
+      }, 150);
+      
     } catch {
       setMessages([...newMessages, { role: "assistant", content: "No pudimos conectar. Por favor llame al 0800-333-1234." }]);
     }
 
     setLoading(false);
-    
-    setTimeout(() => {
-      if (ultimoMensajeRef.current) {
-        ultimoMensajeRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, 60);
   }
 
   function goPanel(id) {
     setActivePanel(id);
     setActiveGuide(null);
     
-    // Scroll suave con ajuste para móvil
     setTimeout(() => {
-      if (isMobile) {
-        const yOffset = -80;
-        const element = document.getElementById('panel-container');
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      } else {
-        document.getElementById('panel-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (panelContainerRef.current) {
+        const elementPosition = panelContainerRef.current.getBoundingClientRect().top;
+        const scrollPosition = window.pageYOffset + elementPosition - 60;
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
       }
     }, 50);
   }
@@ -493,15 +746,13 @@ export default function Home() {
     if (GUIDE_AREA[id]) setActivePanel(GUIDE_AREA[id]);
     
     setTimeout(() => {
-      if (isMobile) {
-        const yOffset = -80;
-        const element = document.getElementById('panel-container');
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      } else {
-        document.getElementById('panel-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (panelContainerRef.current) {
+        const elementPosition = panelContainerRef.current.getBoundingClientRect().top;
+        const scrollPosition = window.pageYOffset + elementPosition - 60;
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
       }
     }, 50);
   }
@@ -511,15 +762,13 @@ export default function Home() {
     setActiveGuide(null);
     
     setTimeout(() => {
-      if (isMobile) {
-        const yOffset = -80;
-        const element = document.getElementById('videos-section');
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      } else {
-        videosSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (videosSectionRef.current) {
+        const elementPosition = videosSectionRef.current.getBoundingClientRect().top;
+        const scrollPosition = window.pageYOffset + elementPosition - 60;
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
       }
     }, 100);
   }
@@ -538,7 +787,6 @@ export default function Home() {
       <div style={{ background: "#F0EDE6", minHeight: "100vh", padding: "1rem", fontFamily: "'Source Sans 3', sans-serif" }}>
         <div style={{ maxWidth: 840, margin: "0 auto", background: "#fff", borderRadius: 16, overflow: "hidden", border: "1px solid rgba(0,0,0,0.12)", fontSize: sz ? 18 : 16 }}>
 
-          {/* TOPBAR */}
           <header style={{ background: "#1B6B3A", padding: "0.65rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ width: 38, height: 38, background: "#D4580A", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🤝</div>
@@ -561,7 +809,6 @@ export default function Home() {
             </div>
           </header>
 
-          {/* LOCBAR con datos de provincias.json - TEXTO MODIFICADO */}
           <div style={{ background: "#F1EFE8", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "0.5rem 1.25rem", display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
               <i className="ti ti-map-pin" style={{ fontSize: 16, color: "#1B6B3A" }} aria-hidden="true"></i>
@@ -590,11 +837,9 @@ export default function Home() {
               )}
             </div>
             
-            {/* Mostrar información de la localidad si está disponible */}
             {localidadInfo && <InfoLocalidad localidadInfo={localidadInfo} sz={sz} />}
           </div>
 
-          {/* HERO */}
           <section style={{ background: "#FAF8F3", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "1.6rem 1.5rem 1.3rem" }}>
             <div style={{ background: "#E8F5EE", borderRadius: 12, padding: "0.9rem 1.1rem", marginBottom: "1.2rem", display: "flex", gap: 12, alignItems: "flex-start", border: "0.5px solid rgba(27,107,58,0.25)" }}>
               <i className="ti ti-heart" style={{ fontSize: 22, color: "#1B6B3A", marginTop: 2 }} aria-hidden="true"></i>
@@ -605,7 +850,6 @@ export default function Home() {
             <h1 style={{ fontFamily: "'Lora', serif", fontSize: sz ? 28 : 24, color: "#1B6B3A", marginBottom: ".4rem", fontWeight: 600 }}>¿Qué desea aprender hoy?</h1>
             <p style={{ fontSize: sz ? 18 : 16, color: "#5F5E5A", marginBottom: "1.1rem", lineHeight: 1.6 }}>Elija uno de los temas de abajo y le guiamos sin tecnicismos.</p>
             
-            {/* TUTORIAL DEL DÍA - AHORA DINÁMICO CON ROTACIÓN Y PRIORIDADES */}
             <div style={{ background: "#FEF3EB", border: "1.5px solid #D4580A", borderRadius: 12, padding: ".9rem 1.1rem" }}>
               <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".6px", color: "#D4580A", marginBottom: ".3rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 6 }}>
                 <span>
@@ -619,11 +863,9 @@ export default function Home() {
               
               {tutorialDelDia ? (
                 <>
-                  {/* TÍTULO DEL VIDEO - usando 'titulo' del archivo videos.js */}
                   <div style={{ fontSize: sz ? 19 : 17, fontWeight: 700, color: "#7A2F00", marginBottom: ".35rem" }}>
                     {tutorialDelDia.titulo}
                   </div>
-                  {/* DESCRIPCIÓN DEL VIDEO - usando 'descripcion' del archivo videos.js */}
                   <div style={{ fontSize: sz ? 16 : 14, color: "#8B3A00", lineHeight: 1.5, marginBottom: ".6rem" }}>
                     {tutorialDelDia.descripcion || "Aprenda paso a paso con este tutorial en video."}
                   </div>
@@ -644,7 +886,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* BIG BUTTONS NAVEGACIÓN MODIFICADA */}
           <nav style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 8, padding: "1rem 1.25rem", borderBottom: "0.5px solid rgba(0,0,0,0.12)" }}>
             {[
               { id: "salud", ico: "ti-heartbeat", lbl: "Salud", sub: "Turnos y recetas", bg: "#E1F5EE", color: "#085041" },
@@ -664,8 +905,7 @@ export default function Home() {
             ))}
           </nav>
 
-          {/* PANEL AREA con ID para scroll */}
-          <div id="panel-container" style={{ minHeight: 360, padding: "1.4rem 1.5rem" }}>
+          <div id="panel-container" ref={panelContainerRef} style={{ minHeight: 360, padding: "1.4rem 1.5rem" }}>
 
             {activePanel === "inicio" && (
               <p style={{ fontSize: sz ? 19 : 17, color: "#5F5E5A", textAlign: "center", padding: "2rem 0", lineHeight: 1.8 }}>
@@ -687,7 +927,6 @@ export default function Home() {
               />
             )}
 
-            {/* PANEL EXCLUSIVO DE VIDEOS CON FILTROS */}
             {activePanel === "videos" && (
               <div id="videos-section" ref={videosSectionRef} style={{ scrollMarginTop: "24px" }}>
                 <VideosPanel
@@ -710,6 +949,7 @@ export default function Home() {
                   setInput={setInput} 
                   sendChat={sendChat} 
                   chatRef={chatRef}
+                  chatContainerRef={chatContainerRef}
                   ultimoMensajeRef={ultimoMensajeRef}
                 />
               </div>
@@ -717,7 +957,6 @@ export default function Home() {
 
           </div>
 
-          {/* FOOTER */}
           <footer style={{ background: "#1B6B3A", padding: ".9rem 1.4rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
             <span style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>Conexión Senior — Proyecto sin fines de lucro — Argentina</span>
             <span style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>Ayuda gratuita: <strong style={{ color: "#fff" }}>0800-333-1234</strong></span>
@@ -794,28 +1033,7 @@ function PanelContent({ panel, sz, activeGuide, showGuide, goPanel, sendChat, ay
       </div>
 
       {guide && (
-        <div>
-          <p style={{ fontSize: sz ? 18 : 16, fontWeight: 700, marginBottom: ".7rem", color: "#1a1a18" }}>{guide.title}</p>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8, marginBottom: "1rem" }}>
-            {guide.steps.map((s, i) => (
-              <li key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "#F7F6F1", borderRadius: 8, padding: ".7rem .9rem" }}>
-                <div style={{ width: 30, height: 30, minWidth: 30, background: "#1B6B3A", color: "#fff", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, marginTop: 1 }}>{i + 1}</div>
-                <div>
-                  <strong style={{ fontSize: sz ? 17 : 15, fontWeight: 700, display: "block", marginBottom: 2, color: "#1a1a18" }}>{s.t}</strong>
-                  <span style={{ fontSize: sz ? 16 : 14, color: "#5F5E5A", lineHeight: 1.5 }}>{s.d}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <button onClick={() => handleDudaButton(`Tengo dudas sobre la guía de: ${cfg.cards.find(c => c.id === activeGuide)?.title || activeGuide}`)}
-            style={{ background: "#1B6B3A", color: "#fff", border: "none", borderRadius: 8, padding: ".65rem 1.2rem", fontFamily: "inherit", fontSize: sz ? 18 : 16, fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8, marginTop: ".5rem" }}>
-            <i className="ti ti-message-circle" aria-hidden="true"></i> Tengo una duda — preguntarle al asistente
-          </button>
-          <button onClick={() => window.print()}
-            style={{ background: "#F7F6F1", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: ".5rem 1rem", fontFamily: "inherit", fontSize: sz ? 16 : 14, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 6, color: "#5F5E5A", marginTop: ".75rem", marginLeft: "0.75rem" }}>
-            <i className="ti ti-printer" aria-hidden="true"></i> Imprimir esta guía
-          </button>
-        </div>
+        <GuideWithVoice guide={guide} sz={sz} />
       )}
 
       {activeGuide && !guide && (
@@ -845,6 +1063,21 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
     ? videos 
     : videos.filter(v => v.categoria === categoriaVideo);
 
+  const handleVideoSelect = (video) => {
+    setSelectedVideo(video);
+    setTimeout(() => {
+      const videoContainer = document.querySelector('.video-player-container');
+      if (videoContainer) {
+        const elementPosition = videoContainer.getBoundingClientRect().top;
+        const scrollPosition = window.pageYOffset + elementPosition - 60;
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
   return (
     <div>
       <p style={{ fontFamily: "'Lora', serif", fontSize: sz ? 22 : 20, color: "#1B6B3A", marginBottom: "1rem", fontWeight: 600 }}>
@@ -852,12 +1085,17 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
         Clases en Video y Tutoriales Pasos a Paso
       </p>
 
-      {selectedVideo ? (
-        <div style={{ marginBottom: "1.5rem", background: "#FAF8F3", padding: "1rem", borderRadius: 12, border: "1px solid rgba(0,0,0,0.08)" }}>
-          <p style={{ fontSize: sz ? 16 : 14, fontWeight: 700, color: "#D4580A", marginBottom: "0.5rem" }}>Viendo ahora:</p>
+      {selectedVideo && (
+        <div className="video-player-container" style={{ marginBottom: "1.5rem", background: "#FAF8F3", padding: "1rem", borderRadius: 12, border: "1px solid rgba(0,0,0,0.08)" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: "0.5rem" }}>
+            <p style={{ fontSize: sz ? 16 : 14, fontWeight: 700, color: "#D4580A", margin: 0 }}>Viendo ahora:</p>
+            <VoiceButton text={`${selectedVideo.titulo}. ${selectedVideo.descripcion}`} size={sz ? "large" : "normal"} />
+          </div>
           <VideoPlayer video={selectedVideo} sz={sz} />
         </div>
-      ) : (
+      )}
+
+      {!selectedVideo && (
         <div style={{ background: "#E8F5EE", padding: "1rem 1.25rem", borderRadius: 12, marginBottom: "1.5rem", color: "#0F5C2E", fontSize: sz ? 17 : 15 }}>
           Toque cualquiera de los videos de abajo para comenzar la reproducción en pantalla grande.
         </div>
@@ -898,10 +1136,7 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
         <VideoGrid 
           videos={videosFiltrados} 
           sz={sz} 
-          onSelect={(video) => {
-            setSelectedVideo(video);
-            window.scrollTo({ top: 300, behavior: "smooth" });
-          }} 
+          onSelect={handleVideoSelect} 
         />
       ) : (
         <p style={{ fontSize: sz ? 16 : 14, color: "#5F5E5A", fontStyle: "italic", padding: "1rem 0" }}>
@@ -912,7 +1147,7 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
   );
 }
 
-function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef, ultimoMensajeRef }) {
+function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef, chatContainerRef, ultimoMensajeRef }) {
   const glosario = [
     { term: "Router", def: "El aparatito que distribuye el internet por su casa. Si el wifi no anda, a veces hay que reiniciarlo." },
     { term: "App", def: 'Un programa que se instala en el celular o tablet. Como un "libro" con una función específica.' },
@@ -920,7 +1155,6 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
     { term: "Código QR", def: "Un cuadradito con puntitos que el celular puede leer para pagar o abrir una página." },
   ];
   
-  // Frases pre-armadas con el texto completo visible
   const quickBtns = [
     "¿Cómo saco turno en PAMI?",
     "¿Cómo veo mi jubilación en ANSES?",
@@ -939,7 +1173,10 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(195px, 1fr))", gap: 10, marginBottom: "1.8rem" }}>
         {glosario.map(g => (
           <div key={g.term} style={{ border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: ".75rem 1rem", background: "#fff" }}>
-            <strong style={{ fontSize: sz ? 17 : 15, fontWeight: 700, color: "#0C5EA8", display: "block", marginBottom: 3 }}>{g.term}</strong>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+              <strong style={{ fontSize: sz ? 17 : 15, fontWeight: 700, color: "#0C5EA8", display: "block", marginBottom: 3 }}>{g.term}</strong>
+              <VoiceButton text={`${g.term}: ${g.def}`} size="small" />
+            </div>
             <span style={{ fontSize: sz ? 15 : 13, color: "#5F5E5A", lineHeight: 1.5 }}>{g.def}</span>
           </div>
         ))}
@@ -972,7 +1209,20 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        <div ref={chatRef} style={{ background: "#F7F6F1", borderRadius: 8, padding: "1rem", minHeight: 200, maxHeight: 320, overflowY: "auto", display: "flex", flexDirection: "column", gap: 10 }}>
+        <div 
+          ref={chatContainerRef}
+          style={{ 
+            background: "#F7F6F1", 
+            borderRadius: 8, 
+            padding: "1rem", 
+            minHeight: 320, 
+            maxHeight: 400, 
+            overflowY: "auto", 
+            display: "flex", 
+            flexDirection: "column", 
+            gap: 12 
+          }}
+        >
           {messages.length === 0 && (
             <div style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
               <div style={{ width: 32, height: 32, minWidth: 32, borderRadius: "50%", background: "#E8F5EE", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>🤝</div>
@@ -983,26 +1233,33 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
           )}
           
           {messages.map((m, i) => {
-            const esUltimaConsultaUsuario = 
-              m.role === "user" && 
-              i === messages.map(msg => msg.role).lastIndexOf("user");
+            const esUltimoMensaje = i === messages.length - 1;
+            const mensajeRef = esUltimoMensaje ? ultimoMensajeRef : null;
 
             return (
               <div 
                 key={i} 
-                ref={esUltimaConsultaUsuario ? ultimoMensajeRef : null}
+                ref={mensajeRef}
                 style={{ 
                   display: "flex", 
                   gap: 8, 
                   alignItems: "flex-start", 
                   flexDirection: m.role === "user" ? "row-reverse" : "row",
-                  scrollMarginTop: "14px"
+                  scrollMarginTop: "10px"
                 }}
               >
                 <div style={{ width: 32, height: 32, minWidth: 32, borderRadius: "50%", background: m.role === "user" ? "#FEF3EB" : "#E8F5EE", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>
                   {m.role === "user" ? "👤" : "🤝"}
                 </div>
                 <div style={{ maxWidth: "78%", borderRadius: 12, padding: "8px 12px", fontSize: sz ? 17 : 15, lineHeight: 1.6, background: m.role === "user" ? "#1B6B3A" : "#fff", border: m.role === "user" ? "none" : "0.5px solid rgba(0,0,0,0.12)", color: m.role === "user" ? "#fff" : "#1a1a18", whiteSpace: "pre-wrap" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                    <span style={{ fontWeight: 700, fontSize: sz ? 14 : 12 }}>
+                      {m.role === "user" ? "📝 Usted preguntó:" : "💬 Asistente:"}
+                    </span>
+                    {m.role === "assistant" && (
+                      <VoiceButton text={m.content} size="small" />
+                    )}
+                  </div>
                   {m.content}
                 </div>
               </div>
