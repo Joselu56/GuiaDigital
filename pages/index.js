@@ -171,6 +171,71 @@ const GUIDE_AREA = {
   qr: "vida", compras: "vida", transporte: "vida", whatsapp: "vida",
 };
 
+/**
+ * Función para seleccionar el tutorial del día con sistema de prioridades
+ * Los videos con mayor prioridad tienen más chances de aparecer
+ * 
+ * Configuración de prioridades:
+ * - prioridad 3: videos destacados (aparecen 3 veces más)
+ * - prioridad 2: videos importantes (aparecen 2 veces más)
+ * - prioridad 1: videos normales (aparecen 1 vez)
+ * - prioridad null/undefined: prioridad base 1
+ */
+function seleccionarTutorialDelDia(videosArray) {
+  if (!videosArray || videosArray.length === 0) return null;
+  
+  // Definir pesos/prioridades para cada video según su ID
+  // Los valores más altos = más chances de aparecer
+  // Puedes modificar esta configuración según tus necesidades
+  const prioridades = {
+    // Prioridad ALTA (3 veces más chances) - Videos destacados
+    "v12": 3,  // videollamada con nietos
+    "v2": 3,  // turno PAMI
+    "v5": 3,  // pago con QR
+    
+    // Prioridad MEDIA (2 veces más chances)
+    "v3": 2,  // reiniciar router
+    "v4": 2,  // ANSES
+    "v1": 2, // WhatsApp tips
+    
+    // Los que no están en la lista tienen prioridad 1
+  };
+  
+  // También puedes priorizar por categoría
+  const prioridadPorCategoria = {
+    "salud": 2,    // temas de salud tienen prioridad alta
+    "celular": 1.5, // temas de celular prioridad media
+    // "vida": 1,
+    // "estado": 1,
+    // "general": 1,
+  };
+  
+  // Crear array ponderado para la selección
+  const weightedVideos = [];
+  
+  videosArray.forEach(video => {
+    // Calcular peso base
+    let peso = prioridades[video.id] || 1;
+    
+    // Ajustar por categoría si existe
+    if (video.categoria && prioridadPorCategoria[video.categoria]) {
+      peso = peso * prioridadPorCategoria[video.categoria];
+    }
+    
+    // Redondear y asegurar mínimo 1
+    peso = Math.max(1, Math.round(peso));
+    
+    // Agregar el video tantas veces como su peso
+    for (let i = 0; i < peso; i++) {
+      weightedVideos.push(video);
+    }
+  });
+  
+  // Seleccionar aleatoriamente del array ponderado
+  const randomIndex = Math.floor(Math.random() * weightedVideos.length);
+  return weightedVideos[randomIndex];
+}
+
 // Componente para mostrar información de la localidad seleccionada
 function InfoLocalidad({ localidadInfo, sz }) {
   if (!localidadInfo) return null;
@@ -304,6 +369,7 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [categoriaVideo, setCategoriaVideo] = useState("todos");
   const [isMobile, setIsMobile] = useState(false);
+  const [tutorialDelDia, setTutorialDelDia] = useState(null);
 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -325,6 +391,29 @@ export default function Home() {
     
     return () => window.removeEventListener('resize', detectMobile);
   }, []);
+
+  // Seleccionar tutorial del día con rotación diaria y prioridades
+  useEffect(() => {
+    if (!videos || videos.length === 0) return;
+    
+    // Obtener la fecha actual en formato YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Intentar recuperar el tutorial guardado para hoy
+    const storedTutorial = localStorage.getItem(`tutorial_del_dia_${today}`);
+    
+    if (storedTutorial) {
+      // Si ya hay un tutorial guardado para hoy, usarlo
+      setTutorialDelDia(JSON.parse(storedTutorial));
+    } else {
+      // Seleccionar nuevo tutorial usando el sistema de prioridades
+      const selectedVideoObj = seleccionarTutorialDelDia(videos);
+      setTutorialDelDia(selectedVideoObj);
+      
+      // Guardar para hoy
+      localStorage.setItem(`tutorial_del_dia_${today}`, JSON.stringify(selectedVideoObj));
+    }
+  }, [videos]);
 
   // Cargar información de la localidad cuando se selecciona municipio
   useEffect(() => {
@@ -420,8 +509,6 @@ export default function Home() {
   function openVideosAndScroll() {
     setActivePanel("videos");
     setActiveGuide(null);
-    const videoMain = videos.find(v => v.id === "v1");
-    if (videoMain) setSelectedVideo(videoMain);
     
     setTimeout(() => {
       if (isMobile) {
@@ -474,11 +561,11 @@ export default function Home() {
             </div>
           </header>
 
-          {/* LOCBAR con datos de provincias.json */}
+          {/* LOCBAR con datos de provincias.json - TEXTO MODIFICADO */}
           <div style={{ background: "#F1EFE8", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "0.5rem 1.25rem", display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
               <i className="ti ti-map-pin" style={{ fontSize: 16, color: "#1B6B3A" }} aria-hidden="true"></i>
-              <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>Su provincia:</label>
+              <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>🔍 Para búsqueda en tu zona - Su Provincia:</label>
               <select id="sel-prov" value={provincia} onChange={e => { setProvincia(e.target.value); setMunicipio(""); }}
                 style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: "5px 10px", fontFamily: "inherit", fontSize: 13, cursor: "pointer", minWidth: 145 }}>
                 <option value="">— Elegir provincia —</option>
@@ -517,16 +604,43 @@ export default function Home() {
             </div>
             <h1 style={{ fontFamily: "'Lora', serif", fontSize: sz ? 28 : 24, color: "#1B6B3A", marginBottom: ".4rem", fontWeight: 600 }}>¿Qué desea aprender hoy?</h1>
             <p style={{ fontSize: sz ? 18 : 16, color: "#5F5E5A", marginBottom: "1.1rem", lineHeight: 1.6 }}>Elija uno de los temas de abajo y le guiamos sin tecnicismos.</p>
+            
+            {/* TUTORIAL DEL DÍA - AHORA DINÁMICO CON ROTACIÓN Y PRIORIDADES */}
             <div style={{ background: "#FEF3EB", border: "1.5px solid #D4580A", borderRadius: 12, padding: ".9rem 1.1rem" }}>
-              <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".6px", color: "#D4580A", marginBottom: ".3rem" }}>
-                <i className="ti ti-star" style={{ fontSize: 12, verticalAlign: -1, marginRight: 3 }} aria-hidden="true"></i>Tutorial del día
+              <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".6px", color: "#D4580A", marginBottom: ".3rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 6 }}>
+                <span>
+                  <i className="ti ti-star" style={{ fontSize: 12, verticalAlign: -1, marginRight: 3 }} aria-hidden="true"></i>
+                  Tutorial del día
+                </span>
+                <span style={{ fontSize: 10, fontWeight: 400, background: "#FFF0E0", padding: "2px 8px", borderRadius: 12 }}>
+                  {new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </span>
               </div>
-              <div style={{ fontSize: sz ? 19 : 17, fontWeight: 700, color: "#7A2F00", marginBottom: ".35rem" }}>Cómo hacer una videollamada con sus nietos</div>
-              <div style={{ fontSize: sz ? 16 : 14, color: "#8B3A00", lineHeight: 1.5, marginBottom: ".6rem" }}>En 5 minutos aprenderá a ver y escuchar a su familia desde el celular o la tablet, sin necesidad de ser experto.</div>
-              <button onClick={openVideosAndScroll}
-                style={{ background: "#D4580A", color: "#fff", border: "none", borderRadius: 8, padding: ".5rem 1.1rem", fontFamily: "inherit", fontSize: sz ? 16 : 14, fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                <i className="ti ti-player-play" aria-hidden="true"></i> Ver el tutorial
-              </button>
+              
+              {tutorialDelDia ? (
+                <>
+                  {/* TÍTULO DEL VIDEO - usando 'titulo' del archivo videos.js */}
+                  <div style={{ fontSize: sz ? 19 : 17, fontWeight: 700, color: "#7A2F00", marginBottom: ".35rem" }}>
+                    {tutorialDelDia.titulo}
+                  </div>
+                  {/* DESCRIPCIÓN DEL VIDEO - usando 'descripcion' del archivo videos.js */}
+                  <div style={{ fontSize: sz ? 16 : 14, color: "#8B3A00", lineHeight: 1.5, marginBottom: ".6rem" }}>
+                    {tutorialDelDia.descripcion || "Aprenda paso a paso con este tutorial en video."}
+                  </div>
+                  <button 
+                    onClick={() => {
+                      setSelectedVideo(tutorialDelDia);
+                      openVideosAndScroll();
+                    }}
+                    style={{ background: "#D4580A", color: "#fff", border: "none", borderRadius: 8, padding: ".5rem 1.1rem", fontFamily: "inherit", fontSize: sz ? 16 : 14, fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    <i className="ti ti-player-play" aria-hidden="true"></i> Ver el tutorial
+                  </button>
+                </>
+              ) : (
+                <div style={{ fontSize: sz ? 16 : 14, color: "#8B3A00" }}>
+                  Cargando tutorial del día...
+                </div>
+              )}
             </div>
           </section>
 
@@ -723,7 +837,8 @@ function VideosPanel({ sz, selectedVideo, setSelectedVideo, categoriaVideo, setC
     { id: "salud", label: "❤️ Salud" },
     { id: "estado", label: "🏦 Trámites" },
     { id: "celular", label: "📱 Celular" },
-    { id: "vida", label: "🛒 Vida Diaria" }
+    { id: "vida", label: "🛒 Vida Diaria" },
+    { id: "general", label: "📚 General" }
   ];
 
   const videosFiltrados = categoriaVideo === "todos" 
@@ -804,6 +919,8 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
     { term: "Contraseña", def: "Una palabra secreta que protege su cuenta. Nunca se la dé a nadie por teléfono." },
     { term: "Código QR", def: "Un cuadradito con puntitos que el celular puede leer para pagar o abrir una página." },
   ];
+  
+  // Frases pre-armadas con el texto completo visible
   const quickBtns = [
     "¿Cómo saco turno en PAMI?",
     "¿Cómo veo mi jubilación en ANSES?",
@@ -829,11 +946,27 @@ function AyudaPanel({ sz, messages, loading, input, setInput, sendChat, chatRef,
       </div>
 
       <p style={{ fontSize: sz ? 17 : 15, fontWeight: 700, marginBottom: ".6rem", color: "#1a1a18" }}>Pregúntele al asistente</p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 6 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
         {quickBtns.map(q => (
-          <button key={q} onClick={() => sendChat(q)}
-            style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 14, padding: "5px 12px", fontSize: sz ? 15 : 13, cursor: "pointer", fontFamily: "inherit", color: "#5F5E5A", transition: "all .2s" }}>
-            {q.replace("¿", "").replace("?", "").replace(/^Cómo /, "").replace(/^Qué /, "").slice(0, 30)}
+          <button 
+            key={q} 
+            onClick={() => sendChat(q)}
+            style={{ 
+              background: "#F7F6F1", 
+              border: "1px solid rgba(0,0,0,0.15)", 
+              borderRadius: 20, 
+              padding: "8px 16px", 
+              fontSize: sz ? 15 : 13, 
+              cursor: "pointer", 
+              fontFamily: "inherit", 
+              color: "#1a1a18", 
+              transition: "all .2s",
+              textAlign: "center",
+              fontWeight: 500,
+              whiteSpace: "normal",
+              wordBreak: "normal"
+            }}>
+            {q}
           </button>
         ))}
       </div>

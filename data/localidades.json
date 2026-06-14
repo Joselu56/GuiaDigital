@@ -61,7 +61,7 @@
       "nombre": "Lomas de Zamora",
       "urls": {
         "municipal": "https://www.lomasdezamora.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "S/N",
         "energia": "https://www.edesur.com.ar/",
         "agua": "https://www.aysa.com.ar/",
         "hospital": "https://www.facebook.com/gandulfohospital/?locale=es_LA"
@@ -406,8 +406,7 @@
     {
       "nombre": "Jesús María",
       "urls": {
-        "municipal": "https://www.jesusmaria.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://www.jesusmaria.gov.ar/",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://www.aguascordobesas.com.ar/",
         "hospital": "https://www.facebook.com/hospitaljesusmaria/"
@@ -483,10 +482,9 @@
       "nombre": "San Esteban",
       "urls": {
         "municipal": "https://www.sanesteban.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://www.aguascordobesas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.sanesteban.com.ar/dispensario"
       },
       "contacto": {
         "telefono_reclamos": "03549-496000",
@@ -494,7 +492,7 @@
         "policia": "03549-496200",
         "bomberos": "100 / 03549-496300",
         "defensa_civil": "103",
-        "nombre_hospital": "Hospital Municipal de San Esteban",
+        "nombre_hospital": "Dispensario de San Esteban",
         "registro_civil": "03549-496400"
       }
     },
@@ -597,7 +595,6 @@
       "nombre": "Villa María",
       "urls": {
         "municipal": "https://villamaria.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.epec.com.ar/",
         "agua": "https://villamaria.gob.ar/",
         "hospital": "https://www.facebook.com/HospitalRegionalPasteur/"
@@ -637,7 +634,6 @@
       "nombre": "Reconquista",
       "urls": {
         "municipal": "https://reconquista.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://www.aguassantafesinas.com.ar/",
         "hospital": ""
@@ -647,9 +643,9 @@
         "hospital_guardia": "03482-420012 / 420042",
         "policia": "911 / 03482-420069 (Comisaría I)",
         "bomberos": "100 / 03482-420019",
-        "defensa_civil": "",
+        "defensa_civil": "3482-580881 / 3482-580882",
         "nombre_hospital": "Hospital Central Reconquista",
-        "registro_civil": ""
+        "registro_civil": "03482-420396"
       }
     },
     {
@@ -675,19 +671,18 @@
       "nombre": "San Lorenzo",
       "urls": {
         "municipal": "https://sanlorenzo.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://www.aguassantafesinas.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/114866460156798"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "(03476) 438 900 (Municipalidad de San Lorenzo), (03476) 355 405 (Reclamos Obras Públicas), +549-387-221-9181 (Asistente virtual \"Lorenzo\" por WhatsApp)",
+        "hospital_guardia": "03476-422404 / 03476-428210 (Atención 24hs)",
+        "policia": "911",
+        "bomberos": "100, 03476 434500 / 03476-435316",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Granaderos a Caballo",
+        "registro_civil": "03476 - 423366"
       }
     },
     {
@@ -713,19 +708,19 @@
       "nombre": "Venado Tuerto",
       "urls": {
         "municipal": "https://venadotuerto.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "(3462) 52-5867",
         "energia": "https://www.epe.santafe.gov.ar/",
         "agua": "https://venadotuerto.gob.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "436383 o 421401",
+        "hospital_guardia": "3462-405900 / 3462-405901 (Guardia las 24 HORAS)",
+        "policia": "911 (Emergencias), 421613 (Comisaría 2da.), 424400 (Comisaría 12da.), 408858 (Comisaría 14ta.), 421193 (Comando Radioeléctrico)",
+        "bomberos": "100 / 103 (Emergencias), (03462) 422111 / 420420",
+        "defensa_civil": "(03462) 422111",
+        "nombre_hospital": "Hospital Dr. Alejandro Gutiérrez",
+        "registro_civil": "(03462) - 421405"
       }
     }
   ],
@@ -734,36 +729,34 @@
       "nombre": "Godoy Cruz",
       "urls": {
         "municipal": "https://www.godoycruz.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.edemsa.com/",
         "agua": "https://www.aysaam.com.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-800-6864",
+        "hospital_guardia": "261 441-0500",
+        "policia": "413 1700",
+        "bomberos": "(0261) 4221428 / 4223332",
+        "defensa_civil": "2615961532",
+        "nombre_hospital": "Hospital José Nestor Lencinas",
+        "registro_civil": "4222622"
       }
     },
     {
       "nombre": "Las Heras",
       "urls": {
         "municipal": "https://lasheras.gob.ar/",
-        "whatsapp": "",
         "energia": "https://www.edemsa.com/",
         "agua": "https://lasheras.gob.ar/",
-        "hospital": ""
+        "hospital": "https://hospitalcarrillo.mendoza.gov.ar/"
       },
       "contacto": {
         "telefono_reclamos": "0800-222-0857",
         "hospital_guardia": "(0261) 413 3890 (Hospital Dr. Ramón Carrillo)",
         "policia": "911",
         "bomberos": "(0261) 4485555 / 4447454",
-        "defensa_civil": "",
+        "defensa_civil": "4129790, 4129791, 4129792",
         "nombre_hospital": "Hospital Dr. Ramón Carrillo",
         "registro_civil": "148 opción 5 (para turnos)"
       }
@@ -775,12 +768,12 @@
         "whatsapp": "https://wa.me/5492615656170",
         "energia": "https://www.edemsa.com/",
         "agua": "https://lujandecuyo.gob.ar/",
-        "hospital": "https://www.lujandecuyo.gob.ar/hospital-de-lujan-de-cuyo/"
+        "hospital": "https://lujandecuyo.gob.ar/hospital-de-lujan/"
       },
       "contacto": {
         "telefono_reclamos": "0800-222-7800",
-        "hospital_guardia": "",
-        "policia": "911",
+        "hospital_guardia": "Clínica Luján (Alvear 150, Luján de Cuyo, Mendoza) - Guardia médica 24 hs, los 365 días del año. Teléfono: (0261) 498-0235.",
+        "policia": "911, 0261-498-0999 (Comisaría 26ta. Luján de Cuyo)",
         "bomberos": "(0261) 4980999",
         "defensa_civil": "2612124022 / 4987647",
         "nombre_hospital": "Hospital de Luján de Cuyo",
@@ -791,36 +784,36 @@
       "nombre": "Maipú",
       "urls": {
         "municipal": "https://maipu.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://wa.me/5492613830050",
         "energia": "https://www.edemsa.com/",
         "agua": "https://maipu.gob.ar/",
-        "hospital": ""
+        "hospital": "https://atencionciudadana.mendoza.gob.ar/solicitud-turnos-hospital-paroissien/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-222-8030",
+        "hospital_guardia": "(0261) 4972277, (0261) 4972288",
+        "policia": "0261-4972460",
+        "bomberos": "0261-4972190",
+        "defensa_civil": "4441010, 4443664, 4443638",
+        "nombre_hospital": "Hospital Diego Paroissien",
+        "registro_civil": "0261 4492166, 0261 4492199"
       }
     },
     {
       "nombre": "Mendoza Capital",
       "urls": {
         "municipal": "https://ciudaddemendoza.gob.ar/",
-        "whatsapp": "261 468-4551",
+        "whatsapp": "0261 468-4551",
         "energia": "https://www.edemsa.com/",
         "agua": "https://www.aysaam.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.mendoza.gov.ar/salud/hospital-central/"
       },
       "contacto": {
         "telefono_reclamos": "0800-222-CIUDAD (248323) o 147",
         "hospital_guardia": "(261) 3855570 / (261) 4490684",
-        "policia": "911",
+        "policia": "911, 0261-4492200 (Comisaría 1ra.)",
         "bomberos": "911 (Emergencias) / (0261) 4203317 (Cuartel Central Mendoza)",
-        "defensa_civil": "911",
+        "defensa_civil": "911, 0261-4492200 (Defensa Civil)",
         "nombre_hospital": "Hospital Central",
         "registro_civil": "Av. Peltier 351, Casa de Gobierno, Mendoza Capital (Dirección General) / 148 (opción 5) (Turnos) / (0261) 4492200 / 4492245 (General)"
       }
@@ -829,10 +822,10 @@
       "nombre": "San Rafael",
       "urls": {
         "municipal": "https://sanrafael.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "0261-154-500000",
         "energia": "https://www.edemsa.com/",
         "agua": "https://www.aysaam.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/hospitalteodorojschestakow/?locale=es_LA"
       },
       "contacto": {
         "telefono_reclamos": "0800-222-0600",
@@ -841,7 +834,7 @@
         "bomberos": "911, 0260-4424417 / 4420090 / 4425615",
         "defensa_civil": "4325012, 2604807949",
         "nombre_hospital": "Hospital Teodoro Juan Schestakow",
-        "registro_civil": ""
+        "registro_civil": "https://www.mendoza.gov.ar/148/registro-civil/"
       }
     }
   ],
@@ -850,10 +843,10 @@
       "nombre": "Banda del Río Salí",
       "urls": {
         "municipal": "https://bandadelriosali.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "0381-154-500000",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": ""
+        "hospital": "https://bandadelriosali.gob.ar/secretaria-de-salud-publica-y-medio-ambiente/policlinica-banda-del-rio-sali/"
       },
       "contacto": {
         "telefono_reclamos": "0381-426-8175",
@@ -862,21 +855,21 @@
         "bomberos": "0381-154419118",
         "defensa_civil": "(0381)426-8152",
         "nombre_hospital": "Policlínica Banda del Río Salí",
-        "registro_civil": ""
+        "registro_civil": "https://regciviltucuman.gob.ar/"
       }
     },
     {
       "nombre": "Concepción",
       "urls": {
         "municipal": "http://www.concepcion.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "03865-154-25800",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
         "hospital": "https://msptucuman.gov.ar/hospitales/hospital-regional-de-concepcion-dr-miguel-belascuain/"
       },
       "contacto": {
         "telefono_reclamos": "03865-425844",
-        "hospital_guardia": "107",
+        "hospital_guardia": "107, 03865-422832 (Hospital Regional de Concepción \"Dr. Miguel Belascuain\")",
         "policia": "03865-422832",
         "bomberos": "03865-425252",
         "defensa_civil": "103",
@@ -888,16 +881,16 @@
       "nombre": "San Miguel de Tucumán",
       "urls": {
         "municipal": "https://smt.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "0381-154-500000",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": "www.msptucuman.gov.ar"
+        "hospital": "https://www.facebook.com/HCSZSantillan/?locale=es_LA"
       },
       "contacto": {
         "telefono_reclamos": "(0381) 4516500",
-        "hospital_guardia": "107",
-        "policia": "911",
-        "bomberos": "100",
+        "hospital_guardia": "107, 0381-451-6000 (Hospital Centro de Salud Zenón Santillán)",
+        "policia": "911 , 0386-451-6000 (Comisaría Primera), 0381-451-6100 (Comisaría Segunda), 0381-451-6200 (Comisaría Tercera), 0381-451-6300 (Comisaría Cuarta), 0381-451-6400 (Comisaría Quinta), 0381-451-6500 (Comisaría Sexta), 0381-451-6600 (Comisaría Séptima), 0381-451-6700 (Comisaría Octava), 0381-451-6800 (Comisaría Novena), 0381-451-6900 (Comisaría Décima)",
+        "bomberos": "100 , 0381-451-6000 (Cuartel Central), 0381-451-6100 (Cuartel Norte), 0381-451-6200 (Cuartel Sur), 0381-451-6300 (Cuartel Este), 0381-451-6400 (Cuartel Oeste)",
         "defensa_civil": "103",
         "nombre_hospital": "Hospital Centro de Salud Zenón Santillán",
         "registro_civil": "(381) 4309316"
@@ -910,7 +903,7 @@
         "whatsapp": "https://wa.me/3815317097",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": "www.msptucuman.gob.ar"
+        "hospital": "https://msptucuman.gov.ar/la-policlinica-lomas-de-tafi-se-convirtio-en-un-servicio-esencial-para-la-comunidad-de-la-zona/"
       },
       "contacto": {
         "telefono_reclamos": "461-3344",
@@ -929,7 +922,7 @@
         "whatsapp": "https://whatsapp.com/channel/0029VaPuaTEGzzKJ3DKv5b15",
         "energia": "https://www.edet.com.ar/",
         "agua": "https://www.sat.gob.ar/",
-        "hospital": "https://www.yerbabuena.gob.ar/secciones/carrillo"
+        "hospital": "https://yerbabuena.gob.ar/centro-de-salud-municipal-dr-ramon-carrillo/"
       },
       "contacto": {
         "telefono_reclamos": "(381) 4533636",
@@ -947,10 +940,10 @@
       "nombre": "Concepción del Uruguay",
       "urls": {
         "municipal": "https://cdeluruguay.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "03442 42-0626 (Municipalidad de Concepción del Uruguay)",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://cdeluruguay.gob.ar/",
-        "hospital": ""
+        "hospital": "https://sites.google.com/view/consultorios-externos-hospital/p%C3%A1gina-principal"
       },
       "contacto": {
         "telefono_reclamos": "(03442) 427626",
@@ -969,7 +962,7 @@
         "whatsapp": "3454247796",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://www.concordia.gob.ar/",
-        "hospital": "https://www.hospitalmasvernat.gob.ar"
+        "hospital": "https://www.hdcm.gov.ar/"
       },
       "contacto": {
         "telefono_reclamos": "105",
@@ -988,7 +981,7 @@
         "whatsapp": "+54 9 3446 50-3196",
         "energia": "https://www.enersa.com.ar/",
         "agua": "https://gualeguaychu.gov.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/HospitalCentenarioGualeguaychu/?locale=es_LA"
       },
       "contacto": {
         "telefono_reclamos": "+54 9 3446 50-3196",
@@ -997,7 +990,7 @@
         "bomberos": "03446-424004",
         "defensa_civil": "103",
         "nombre_hospital": "Hospital Centenario de Gualeguaychú",
-        "registro_civil": ""
+        "registro_civil": "Bolívar N° 988, Gualeguaychú, Entre Ríos. Teléfono: 03446-423311"
       }
     },
     {
@@ -1014,7 +1007,7 @@
         "hospital_guardia": "(0343) 4234545",
         "policia": "0343 420 6202",
         "bomberos": "0343-422699",
-        "defensa_civil": "",
+        "defensa_civil": "103",
         "nombre_hospital": "Hospital General San Martín",
         "registro_civil": "(0343) 4206707"
       }
@@ -1025,10 +1018,10 @@
       "nombre": "Eldorado",
       "urls": {
         "municipal": "https://eldorado.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "03751 42-0626 (Municipalidad de Eldorado)",
         "energia": "https://www.emsa.com.ar/",
         "agua": "https://eldorado.gob.ar/",
-        "hospital": ""
+        "hospital": "https://salud.misiones.gob.ar/samic-eldorado/"
       },
       "contacto": {
         "telefono_reclamos": "3751300352",
@@ -1044,10 +1037,10 @@
       "nombre": "Oberá",
       "urls": {
         "municipal": "https://obera.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "03755 42-0626 (Municipalidad de Oberá)",
         "energia": "https://www.emsa.com.ar/",
         "agua": "https://obera.gob.ar/",
-        "hospital": ""
+        "hospital": "https://salud.misiones.gob.ar/samic-obera/"
       },
       "contacto": {
         "telefono_reclamos": "(3755) 454100",
@@ -1056,14 +1049,14 @@
         "bomberos": "(03755) 426298",
         "defensa_civil": "3755-230004",
         "nombre_hospital": "Hospital SAMIC Oberá",
-        "registro_civil": "TM 3755456431 - TT 3755435926 (CDR de 100 Hectáreas)"
+        "registro_civil": "03755-421176 (Registro Civil de Oberá, a través de la Policía) / 3755-230004 (Municipalidad de Oberá, para turnos)"
       }
     },
     {
       "nombre": "Posadas",
       "urls": {
         "municipal": "https://posadas.gov.ar/",
-        "whatsapp": "",
+        "whatsapp": "03754 42-0626 (Municipalidad de Posadas)",
         "energia": "https://www.emsa.com.ar/",
         "agua": "https://www.samsa.com.ar/",
         "hospital": "https://hospitalmadariaga.org/"
@@ -1074,7 +1067,7 @@
         "policia": "911 (Emergencias), +54 (0376) 4447646 (Jefatura de Policía)",
         "bomberos": "100 (Emergencias), 0376-4595199 (Bomberos Voluntarios Posadas)",
         "defensa_civil": "103 (Emergencias), +54 (0376) 4447636",
-        "nombre_hospital": "Hospital Escuela de Agudos \"Dr. Ramón Madariaga\"",
+        "nombre_hospital": "Hospital Escuela de Agudos Dr. Ramón Madariaga",
         "registro_civil": "https://www.registrocivil.misiones.gov.ar/"
       }
     },
@@ -1082,19 +1075,19 @@
       "nombre": "Puerto Iguazú",
       "urls": {
         "municipal": "https://iguazu.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "03757 42-0626 (Municipalidad de Puerto Iguazú)",
         "energia": "https://www.emsa.com.ar/",
         "agua": "https://iguazu.gob.ar/",
-        "hospital": ""
+        "hospital": "03757 42-0626 (Hospital SAMIC Puerto Iguazú)"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "376-4447531/7527",
+        "hospital_guardia": "107 / +54 3757 420288",
+        "policia": "101 / +54 9 3757 420016",
+        "bomberos": "100 / +54 3757 425629",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital SAMIC Marta Teodora Schwarz",
+        "registro_civil": "+54 3757 425036 (Oficina en Calle 1 de Mayo No 346 Bo Villa Florida)"
       }
     }
   ],
@@ -1103,76 +1096,75 @@
       "nombre": "Metán",
       "urls": {
         "municipal": "https://www.sanjosedemetan.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "(0387) 6458113 y del Ente Regulador: 3876347400",
         "energia": "https://www.edesa.com.ar/",
         "agua": "https://www.aguasdelnortesalta.com.ar/",
         "hospital": ""
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03876-420327 / 03876-420204 / 03876-420128 (Municipalidad de Metán)",
+        "hospital_guardia": "03876-420288 / 03876-420461 / 03876-425222 (Hospital del Carmen, guardia 24 horas)",
+        "policia": "911 (Emergencias) / 101 (Policía)",
+        "bomberos": "03876-420888 (Bomberos Voluntarios de San José de Metán)",
+        "defensa_civil": "103 (Emergencias) / 0800-777-3336 (Provincial para incendios)",
+        "nombre_hospital": "Hospital del Carmen",
+        "registro_civil": "148 (para turnos) / 25 de Mayo 190 (Oficina principal)"
       }
     },
     {
       "nombre": "Salta Capital",
       "urls": {
         "municipal": "https://municipalidadsalta.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "0387 416-0900",
         "energia": "https://www.edesa.com.ar/",
         "agua": "https://www.aguasdelnortesalta.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.hospitalonativia.gob.ar/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0387 416-0900",
+        "hospital_guardia": "0387 – 4315042",
+        "policia": "911 (Emergencias), 0387-4315000 (Jefatura de Policía)",
+        "bomberos": "0387-4315000 (Bomberos Voluntarios de Salta, a través de la Jefatura de Policía)",
+        "defensa_civil": "148 (Municipalidad de Salta) / 103 (Emergencias)",
+        "nombre_hospital": "Hospital Dr. Arturo Oñativia",
+        "registro_civil": "0387-4315000 (Registro Civil de Salta, a través de la Jefatura de Policía) / 148 (Municipalidad de Salta, para turnos)"
       }
     },
     {
       "nombre": "San Ramón de la Nueva Orán",
       "urls": {
         "municipal": "https://oran.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "3878525058",
         "energia": "https://www.edesa.com.ar/",
         "agua": "https://www.aguasdelnortesalta.com.ar/",
-        "hospital": ""
+        "hospital": "https://hospitalsanvicentedepauloran.com.ar/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "3878-525058",
+        "hospital_guardia": "03878-421699",
+        "policia": "03878-428264",
+        "bomberos": "03878-421000",
+        "defensa_civil": "0387-4213852 (Este es el número de la Subsecretaría de Defensa Civil de Salta, que presta servicio en San Ramón de la Nueva Orán)",
+        "nombre_hospital": "Hospital San Vicente de Paul",
+        "registro_civil": "https://www.registrocivilsalta.gov.ar (Sitio web oficial del Registro Civil de Salta, donde se pueden gestionar turnos para la delegación Orán)"
       }
     },
     {
       "nombre": "Tartagal",
       "urls": {
-        "municipal": "https://www.tartagal.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://www.tartagal.gob.ar/",        
         "energia": "https://www.edesa.com.ar/",
         "agua": "https://www.aguasdelnortesalta.com.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/hospitaljuandomingoperontartagal/?locale=es_LA"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "03873-206191",
+        "hospital_guardia": "03873-421648",
+        "policia": "03873-422122",
+        "bomberos": "03873-15417920",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Presidente Juan Domingo Perón de Tartagal",
+        "registro_civil": "148"
       }
     }
   ],
@@ -1180,11 +1172,10 @@
     {
       "nombre": "Charata",
       "urls": {
-        "municipal": "https://charata.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://charata.gob.ar/",        
         "energia": "https://www.secheep.gov.ar/",
         "agua": "https://www.sameep.gob.ar/",
-        "hospital": ""
+        "hospital": "03731 42-1507 (Hospital Enrique V. de Llamas)"
       },
       "contacto": {
         "telefono_reclamos": "03731-422747",
@@ -1199,58 +1190,57 @@
     {
       "nombre": "Presidencia Roque Sáenz Peña",
       "urls": {
-        "municipal": "https://saenzpena.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://saenzpena.gob.ar/",        
         "energia": "https://www.secheep.gov.ar/",
         "agua": "https://www.sameep.gob.ar/",
-        "hospital": ""
+        "hospital": "https://www.facebook.com/hospital4dejunio/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0364-4421587",
+        "hospital_guardia": "(0364)- 442-0667",
+        "policia": "911",
+        "bomberos": "03644-400008",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital 4 de Junio - Ramón Carrillo",
+        "registro_civil": "3644-151571"
       }
     },
     {
       "nombre": "Resistencia",
       "urls": {
         "municipal": "https://www.resistencia.gob.ar/",
-        "whatsapp": "",
+        "whatsapp": "362-4858825",
         "energia": "https://www.secheep.gov.ar/",
         "agua": "https://www.sameep.gob.ar/",
-        "hospital": ""
+        "hospital": "https://gobiernoabierto.chaco.gob.ar/participacion-ciudadana/hospital-perrando/"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "0800-555-5055",
+        "hospital_guardia": "0362-4425050",
+        "policia": "911 / 0362-4463102",
+        "bomberos": "0362-4385450 / 0362-4434100",
+        "defensa_civil": "103 / 0362-4417930",
+        "nombre_hospital": "Hospital Dr. Julio Cecilio Perrando",
+        "registro_civil": "0379-4002332"
       }
     },
     {
       "nombre": "Villa Ángela",
       "urls": {
-        "municipal": "https://villaangela.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://municipiosycomunas.com.ar/villa-angela/",
+        "whatsapp": "03735 – 430293",
         "energia": "https://www.secheep.gov.ar/",
         "agua": "https://www.sameep.gob.ar/",
-        "hospital": ""
+        "hospital": "03735640872 (Hospital Salvador Mazza)"
       },
       "contacto": {
-        "telefono_reclamos": "",
-        "hospital_guardia": "",
-        "policia": "",
-        "bomberos": "",
-        "defensa_civil": "",
-        "nombre_hospital": "",
-        "registro_civil": ""
+        "telefono_reclamos": "3735487893",
+        "hospital_guardia": "420056",
+        "policia": "3735412927",
+        "bomberos": "03735421193",
+        "defensa_civil": "103",
+        "nombre_hospital": "Hospital Dr. Salvador Mazza",
+        "registro_civil": "3735521575"
       }
     }
   ],
@@ -1258,8 +1248,7 @@
     {
       "nombre": "Comodoro Rivadavia",
       "urls": {
-        "municipal": "https://www.comodoro.gov.ar/",
-        "whatsapp": "",
+        "municipal": "https://www.comodoro.gov.ar/",        
         "energia": "https://www.serc.electrica.gob.ar/",
         "agua": "https://www.serc.electrica.gob.ar/",
         "hospital": "https://www.facebook.com/HospitalRegionalComodoro/"
@@ -1277,8 +1266,7 @@
     {
       "nombre": "Puerto Madryn",
       "urls": {
-        "municipal": "https://www.madryn.gob.ar//",
-        "whatsapp": "",
+        "municipal": "https://www.madryn.gob.ar//",        
         "energia": "https://www.serc.electrica.gob.ar/",
         "agua": "https://www.serc.electrica.gob.ar/",
         "hospital": "https://www.facebook.com/hospitalandresisola/"
@@ -1297,7 +1285,7 @@
       "nombre": "Rawson",
       "urls": {
         "municipal": "https://rawson-chubut.com.ar/",
-        "whatsapp": "",
+        "whatsapp": "https://acortar.link/07yDMy",
         "energia": "https://www.serc.electrica.gob.ar/",
         "agua": "https://www.serc.electrica.gob.ar/",
         "hospital": ""
@@ -1315,8 +1303,7 @@
     {
       "nombre": "Trelew",
       "urls": {
-        "municipal": "https://trelew.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://trelew.gob.ar/",       
         "energia": "https://www.serc.electrica.gob.ar/",
         "agua": "https://www.serc.electrica.gob.ar/",
         "hospital": "https://www.facebook.com/hospitaladolfomargalot/"
@@ -1336,8 +1323,7 @@
     {
       "nombre": "Caleta Olivia",
       "urls": {
-        "municipal": "https://caletaolivia.gov.ar/",
-        "whatsapp": "",
+        "municipal": "https://caletaolivia.gov.ar/",       
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": "https://www.facebook.com/hospitalzonaldecaletaolivia/?locale=es_LA"
@@ -1355,8 +1341,7 @@
     {
       "nombre": "Cañadón Seco",
       "urls": {
-        "municipal": "https://www.facebook.com/p/Comisi%C3%B3n-de-Fomento-Ca%C3%B1adon-Seco-100063689642649/?locale=es_LA",
-        "whatsapp": "",
+        "municipal": "https://www.facebook.com/p/Comisi%C3%B3n-de-Fomento-Ca%C3%B1adon-Seco-100063689642649/?locale=es_LA",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": ""
@@ -1374,8 +1359,7 @@
     {
       "nombre": "El Chaltén",
       "urls": {
-        "municipal": "https://elchalten.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://elchalten.gob.ar/",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": "https://www.facebook.com/puestosanitario.elchalten/"
@@ -1393,8 +1377,7 @@
     {
       "nombre": "Las Heras",
       "urls": {
-        "municipal": "https://municipiolasherassantacruz.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://municipiolasherassantacruz.gob.ar/",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": "https://www.facebook.com/hospitaldistrital.lasheras/?locale=es_LA"
@@ -1412,8 +1395,7 @@
     {
       "nombre": "Perito Moreno",
       "urls": {
-        "municipal": "https://peritomoreno.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://peritomoreno.gob.ar/",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": "https://www.hospitalpm.com/"
@@ -1431,8 +1413,7 @@
     {
       "nombre": "Pico Truncado",
       "urls": {
-        "municipal": "https://picotruncado.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://picotruncado.gob.ar/",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": ""
@@ -1450,8 +1431,7 @@
     {
       "nombre": "Río Gallegos",
       "urls": {
-        "municipal": "https://riogallegos.gob.ar/",
-        "whatsapp": "",
+        "municipal": "https://riogallegos.gob.ar/",        
         "energia": "https://www.servicios.publicos.coop/",
         "agua": "https://www.servicios.publicos.coop/",
         "hospital": "https://www.facebook.com/hospitalregionalriogallegos/"

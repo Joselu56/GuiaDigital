@@ -15,14 +15,14 @@
 
 export const videos = [
   {
-    id: "v1",
+    id: "v12",
     tipo: "youtube",
     videoId: "mlF3UyFau0I",          // <-- reemplazar con el ID real de YouTube
     titulo: "Como hacer una videollamada con sus nietos",
     descripcion: "Paso a paso en WhatsApp y FaceTime, desde el celular.",
     duracion: "0:45",
     categoria: "general",
-    guia: null,                        // si tiene guia relacionada, poner el ID (ej: "pami")
+    guia: "celular",                        // si tiene guia relacionada, poner el ID (ej: "pami")
   },
   {
     id: "v2",
@@ -123,6 +123,16 @@ export const videos = [
     duracion: "0:41",
     categoria: "salud",
     guia: "pami",
+  },
+  {
+    id: "v1",
+    tipo: "youtube",
+    videoId: "_lxOoK4Jwns",          // <-- reemplazar con el ID real
+    titulo: "Whatsapp:",
+    descripcion: "Tips para los primeros usos de WhatsApp.",
+    duracion: "3:39",
+    categoria: "general",
+    guia: "celular",
   },
   // -------------------------------------------------------
   // EJEMPLO: video propio subido a Cloudflare R2
