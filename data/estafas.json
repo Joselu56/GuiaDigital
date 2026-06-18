@@ -1,0 +1,216 @@
+{
+  "estafas": [
+    {
+      "id": "phishing",
+      "titulo": "Phishing (suplantación de identidad)",
+      "icono": "ti-alert-triangle",
+      "color": "#D4580A",
+      "que_es": "Mensajes (mail, redes sociales, WhatsApp) que parecen reales para que entregues datos o entres a una página falsa.",
+      "ejemplo": "\"Tu cuenta se bloquea hoy. Verificá acá.\"",
+      "como_evitarlo": [
+        "No entres por el link del mensaje.",
+        "Entrá por tu cuenta: app oficial o escribiendo la dirección de la web vos desde tu navegador de Internet preferido.",
+        "Si tenés dudas, llamá directamente a la entidad que supuestamente te contacta.",
+        "Nunca compartas contraseñas ni códigos de verificación por mensaje."
+      ],
+      "que_hacer_si_caiste": "Si entregaste tus datos, comunicate inmediatamente con el banco o la entidad afectada. Cambiá todas tus contraseñas desde un dispositivo seguro."
+    },
+    {
+      "id": "vishing",
+      "titulo": "Vishing (estafa telefónica)",
+      "icono": "ti-phone",
+      "color": "#C0392B",
+      "que_es": "Llamadas telefónicas donde un falso empleado de banco o entidad oficial te pide datos personales o códigos.",
+      "ejemplo": "\"Soy del banco. Detectamos un movimiento sospechoso en su cuenta. Necesito que me confirme su clave.\"",
+      "como_evitarlo": [
+        "Ningún banco te pide contraseñas por teléfono.",
+        "Si te llaman, cortá y llamá vos al número oficial del banco.",
+        "No te dejes apurar: las estafas siempre crean urgencia.",
+        "Anotá el número y consultá con un familiar de confianza."
+      ],
+      "que_hacer_si_caiste": "Comunicate con tu banco inmediatamente. Hacé el reclamo formal y pedí el bloqueo de tus cuentas si es necesario."
+    },
+    {
+      "id": "smishing",
+      "titulo": "Smishing (estafa por SMS)",
+      "icono": "ti-message",
+      "color": "#2980B9",
+      "que_es": "Mensajes de texto (SMS) que te llegan al celular con enlaces falsos para robar tus datos.",
+      "ejemplo": "\"Su paquete está retenido en la aduana. Ingrese aquí para liberarlo: [link falso]\"",
+      "como_evitarlo": [
+        "No hagas clic en enlaces de mensajes de texto de números desconocidos.",
+        "Verificá siempre con la empresa o entidad por canales oficiales.",
+        "Si no esperás ningún paquete, ignorá el mensaje.",
+        "Bloqueá el número y reportalo como spam."
+      ],
+      "que_hacer_si_caiste": "Si ingresaste datos, comunicate con tu banco y cambiá tus contraseñas. Monitoreá tus cuentas por movimientos extraños."
+    },
+    {
+      "id": "estafa_del_cuñado",
+      "titulo": "Estafa del familiar en apuros",
+      "icono": "ti-users",
+      "color": "#8E44AD",
+      "que_es": "Te escriben o llaman haciéndose pasar por un familiar (hijo, nieto, sobrino) diciendo que tuvieron un accidente o que los secuestraron y necesitan dinero urgente.",
+      "ejemplo": "\"Hola abuela, perdí mi celular y mi billetera. Necesito que me transfieras $50.000 para pagar el hotel. Después te cuento.\"",
+      "como_evitarlo": [
+        "Nunca transfieras dinero sin confirmar la identidad.",
+        "Pedile datos que solo esa persona sabría.",
+        "Llamá directamente al familiar en cuestión a su número de confianza.",
+        "No te dejes llevar por la urgencia: es la táctica principal de esta estafa."
+      ],
+      "que_hacer_si_caiste": "Hacé la denuncia policial. Contactá a tu banco para ver si pueden revertir la transferencia. Avisá a tu familia para que estén alerta."
+    },
+    {
+      "id": "estafa_del_falso_tecnico",
+      "titulo": "Estafa del falso técnico",
+      "icono": "ti-device-laptop",
+      "color": "#F39C12",
+      "que_es": "Te llaman o aparece un cartel en tu computadora diciendo que tenés un virus y te ofrecen \"arreglarlo\" a cambio de dinero o acceso remoto.",
+      "ejemplo": "\"Su computadora tiene un virus grave. Llame a este número para que lo solucionemos.\"",
+      "como_evitarlo": [
+        "Ninguna empresa seria te llama por un virus sin que vos lo solicites.",
+        "No des acceso remoto a tu computadora a desconocidos.",
+        "Si ves un cartel de virus en tu pantalla, cerrá el navegador o reiniciá la PC.",
+        "Consultá con un familiar o técnico de confianza."
+      ],
+      "que_hacer_si_caiste": "Si diste acceso remoto, apagá la computadora inmediatamente y desconectala de internet. Llevála a un técnico de confianza para que la revise."
+    },
+    {
+      "id": "estafa_de_la_herencia",
+      "titulo": "Estafa de la herencia o premio falso",
+      "icono": "ti-gift",
+      "color": "#27AE60",
+      "que_es": "Te avisan que ganaste un premio o que te corresponde una herencia, pero te piden pagar un \"impuesto\" o \"gastos administrativos\" primero.",
+      "ejemplo": "\"Usted ha ganado un premio de $2.000.000. Para cobrarlo, debe depositar $20.000 por gastos de gestión.\"",
+      "como_evitarlo": [
+        "Si es un premio real, no te piden dinero para cobrarlo.",
+        "Ignorá estos mensajes, incluso si parecen oficiales.",
+        "Verificá con la entidad que supuestamente te contacta por canales oficiales.",
+        "No deposites ni transfieras dinero a desconocidos."
+      ],
+      "que_hacer_si_caiste": "Hacé la denuncia policial. Si transferiste dinero, contactá a tu banco inmediatamente."
+    },
+    {
+      "id": "estafa_de_la_compra",
+      "titulo": "Estafa en compras online",
+      "icono": "ti-shopping-cart",
+      "color": "#E74C3C",
+      "que_es": "Publicaciones falsas en redes sociales o páginas de venta que ofrecen productos a precios muy bajos. Pagás y nunca recibís el producto.",
+      "ejemplo": "\"iPhone 15 nuevo $50.000 - Oferta por liquidación - Envío gratis\"",
+      "como_evitarlo": [
+        "Desconfiá de precios demasiado bajos.",
+        "Verificá la reputación del vendedor (reviews, antigüedad).",
+        "Usá plataformas con protección al comprador (MercadoLibre, etc.).",
+        "Evitá pagar por transferencia bancaria a desconocidos.",
+        "No te apresures: las ofertas falsas siempre generan urgencia."
+      ],
+      "que_hacer_si_caiste": "Denunciá en la plataforma donde hiciste la compra. Hacé la denuncia policial. Contactá a tu banco para intentar revertir el pago."
+    },
+    {
+      "id": "estafa_del_falso_abogado",
+      "titulo": "Estafa del falso abogado",
+      "icono": "ti-scale",
+      "color": "#D35400",
+      "que_es": "Te llaman o te escriben diciendo que un familiar tuvo un accidente o está detenido y necesitan dinero para un abogado o para pagar una fianza.",
+      "ejemplo": "\"Hola, soy el abogado de su hijo. Tuvo un accidente grave y necesito $100.000 para la operación urgente. Transferí ahora.\"",
+      "como_evitarlo": [
+        "No transfieras dinero sin confirmar la identidad.",
+        "Llamá directamente al familiar en cuestión.",
+        "Pedí datos que solo esa persona sabría.",
+        "Las fianzas y abogados no se pagan por transferencia a particulares."
+      ],
+      "que_hacer_si_caiste": "Hacé la denuncia policial inmediatamente. Contactá a tu banco para intentar revertir la transferencia. Avisá a tu familiar para que esté alerta."
+    },
+    {
+      "id": "estafa_de_la_encuesta",
+      "titulo": "Estafa de la encuesta o sorteo falso",
+      "icono": "ti-clipboard",
+      "color": "#16A085",
+      "que_es": "Te llega un mensaje o llamada diciendo que ganaste un sorteo por completar una encuesta y te piden datos bancarios para depositarte el premio.",
+      "ejemplo": "\"¡Felicidades! Ganó un sorteo de $500.000. Complete sus datos bancarios para recibir el depósito.\"",
+      "como_evitarlo": [
+        "Ningún sorteo legítimo pide datos bancarios para entregar un premio.",
+        "Ignorá estos mensajes, aunque parezcan de una marca conocida.",
+        "Verificá en las páginas oficiales de las marcas si hay sorteos vigentes.",
+        "Nunca compartas tus datos bancarios por mensaje o llamada."
+      ],
+      "que_hacer_si_caiste": "Comunicate con tu banco inmediatamente para bloquear tus cuentas y cambiar tus claves. Hacé la denuncia policial."
+    },
+    {
+      "id": "estafa_del_falso_empleo",
+      "titulo": "Estafa de oferta de trabajo falsa",
+      "icono": "ti-briefcase",
+      "color": "#2C3E50",
+      "que_es": "Te ofrecen un trabajo con sueldo muy alto y te piden dinero para \"gastos de gestión\", \"capacitación\" o \"fondo de garantía\".",
+      "ejemplo": "\"Oferta laboral: Trabajo desde casa, $200.000 por mes. Solo debe pagar $5.000 por el material de capacitación.\"",
+      "como_evitarlo": [
+        "Ningún empleo legítimo te pide dinero para contratarte.",
+        "Investigá la empresa en internet antes de dar datos.",
+        "Si es demasiado bueno para ser verdad, probablemente es una estafa.",
+        "Consultá con un familiar antes de tomar cualquier decisión."
+      ],
+      "que_hacer_si_caiste": "Denunciá en el Ministerio de Trabajo. Hacé la denuncia policial. Si diste datos bancarios, comunicate con tu banco."
+    },
+    {
+      "id": "malware",
+      "titulo": "Malware (programas malos)",
+      "icono": "ti-virus",
+      "color": "#B03A2E",
+      "que_es": "Software malicioso que se instala para dañar, espiar o robar datos (virus, troyanos, spyware, etc.).",
+      "ejemplo": "Descargás \"algo\" desde un link y después la compu o celular se comporta raro: se pone lento, aparecen ventanas extrañas o desaparecen archivos.",
+      "como_evitarlo": [
+        "En Android, bajá apps SOLO desde Google Play (la tienda oficial).",
+        "En iPhone, bajá apps SOLO desde App Store (la tienda oficial).",
+        "No instales archivos con extensión '.apk' que te mandan por mensaje si no sabés qué son.",
+        "No hagas clic en enlaces sospechosos que te llegan por mail, WhatsApp o SMS.",
+        "Mantené actualizado tu celular y computadora (las actualizaciones corrigen fallos de seguridad)."
+      ],
+      "que_hacer_si_caiste": "Si notás comportamientos extraños en tu celular o computadora, llevá el dispositivo a un técnico de confianza. No intentes arreglarlo vos si no sabés. Cambiá tus contraseñas desde otro dispositivo seguro."
+    },
+    {
+      "id": "ransomware",
+      "titulo": "Ransomware (te secuestran los archivos)",
+      "icono": "ti-lock",
+      "color": "#E74C3C",
+      "que_es": "Un malware que bloquea o cifra tus archivos (fotos, documentos) y te pide un pago (rescate) para recuperarlos.",
+      "ejemplo": "\"Tus fotos y documentos fueron encriptados. Pagá $500 en Bitcoin para recuperarlos. Tenés 48 horas.\"",
+      "como_evitarlo": [
+        "Hacé copia de seguridad (backup) de lo importante: fotos, documentos, contactos.",
+        "Guardá las copias en un lugar separado: un disco externo, una nube (Google Drive, iCloud) o un pendrive.",
+        "No hagas clic en enlaces sospechosos ni abras archivos adjuntos de desconocidos.",
+        "Mantené actualizado tu sistema operativo y antivirus."
+      ],
+      "que_hacer_si_caiste": "NO PAGUES el rescate: no hay garantía de que te devuelvan los archivos. Desconectá el dispositivo de internet. Lleválo a un técnico especializado. Si tenés copia de seguridad, podés recuperar tus archivos desde ahí."
+    },
+    {
+      "id": "quishing",
+      "titulo": "Estafas con QR (quishing)",
+      "icono": "ti-qrcode",
+      "color": "#D35400",
+      "que_es": "Te hacen escanear un código QR que te manda a una web falsa o instala algo malicioso en tu celular.",
+      "ejemplo": "Un QR pegado arriba del QR real en un cartel de un restaurante o estacionamiento, o un QR enviado por mail que dice \"Verificá tu cuenta aquí\".",
+      "como_evitarlo": [
+        "Si el QR te lleva a una web que pide usuario, clave o datos de tarjeta: frená y verificá por otro canal.",
+        "Antes de escanear, fijate si el QR parece pegado encima de otro (en carteles públicos).",
+        "Desconfiá de QRs en lugares poco habituales o que te llegan por mail sin esperarlos.",
+        "Usá el lector de QR de tu celular (muchos ya lo tienen integrado en la cámara) y prestá atención a la dirección web a la que te lleva."
+      ],
+      "que_hacer_si_caiste": "Si ingresaste datos en una web falsa, comunicate con tu banco inmediatamente. Cambiá todas tus contraseñas. Monitoreá tus cuentas por movimientos extraños."
+    },
+    {
+      "id": "deepfake",
+      "titulo": "Deepfake (voz o video falso)",
+      "icono": "ti-microphone",
+      "color": "#8E44AD",
+      "que_es": "Audio, video o imagen manipulados con Inteligencia Artificial (IA) para que parezcan reales. Por ejemplo, una \"voz\" que suena como la de un familiar pidiendo dinero.",
+      "ejemplo": "\"Mamá, soy yo. Cambié de número. Tengo un problema y necesito que me transfieras $30.000 urgente.\" (pero es una voz generada por IA que imita a tu familiar)",
+      "como_evitarlo": [
+        "Confirmá por otra vía: llamá al número de siempre de tu familiar.",
+        "Hacé una pregunta que solo esa persona sepa (ej: '¿Cómo se llamaba tu primer perro?').",
+        "Desconfiá de pedidos urgentes y secretos (los estafadores usan la urgencia para que no pienses).",
+        "Si la llamada es por video, pedí que la persona haga un gesto específico (como tocarse la nariz) para confirmar que es real."
+      ],
+      "que_hacer_si_caiste": "Si transferiste dinero, comunicate con tu banco inmediatamente para intentar revertir la transferencia. Hacé la denuncia policial. Avisá a tu familiar para que sepa que están usando su identidad."
+    }
+  ]
+}

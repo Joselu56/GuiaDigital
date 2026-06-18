@@ -3,6 +3,7 @@ import VideoPlayer, { VideoGrid } from "../components/VideoPlayer";
 import { videos } from "../data/videos";
 import provinciasData from "../data/provincias.json";
 import localidadesData from "../data/localidades.json";
+import estafasData from "../data/estafas.json";
 import Head from "next/head";
 import { useState, useRef, useEffect } from "react";
 import { buscarLocalidad, obtenerProvinciaId } from "../lib/localidadService";
@@ -621,6 +622,162 @@ function scrollToChatTop(element, chatContainer) {
   });
 }
 
+// ============================================================
+// COMPONENTE PARA MOSTRAR ESTAFAS
+// ============================================================
+function EstafasPanel({ estafas, estafaSeleccionada, setEstafaSeleccionada, sz }) {
+  const estafa = estafas.find(e => e.id === estafaSeleccionada);
+
+  return (
+    <div id="estafas-section" style={{ scrollMarginTop: "20px" }}>
+      {!estafa ? (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 12 }}>
+          {estafas.map(e => (
+            <div 
+              key={e.id}
+              onClick={() => setEstafaSeleccionada(e.id)}
+              style={{
+                border: "2px solid rgba(0,0,0,0.1)",
+                borderRadius: 12,
+                padding: "1rem 1.2rem",
+                cursor: "pointer",
+                background: "#fff",
+                transition: "all 0.2s",
+                borderLeft: `4px solid ${e.color}`
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <i className={`ti ${e.icono}`} style={{ fontSize: 24, color: e.color }} aria-hidden="true"></i>
+                <strong style={{ fontSize: sz ? 17 : 15, color: "#1a1a18" }}>{e.titulo}</strong>
+              </div>
+              <p style={{ fontSize: sz ? 15 : 13, color: "#5F5E5A", margin: 0, lineHeight: 1.5 }}>
+                {e.que_es.substring(0, 100)}...
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ 
+          background: "#FFF8F5", 
+          borderRadius: 12, 
+          padding: "1.2rem 1.5rem", 
+          border: `2px solid ${estafa.color}`,
+          position: "relative"
+        }}>
+          <button 
+            onClick={() => setEstafaSeleccionada(null)}
+            style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              background: "none",
+              border: "none",
+              fontSize: 24,
+              cursor: "pointer",
+              color: "#5F5E5A"
+            }}
+            aria-label="Volver al listado de estafas"
+          >
+            ✕
+          </button>
+          
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <i className={`ti ${estafa.icono}`} style={{ fontSize: 32, color: estafa.color }} aria-hidden="true"></i>
+            <h3 style={{ fontSize: sz ? 22 : 20, color: estafa.color, margin: 0, fontWeight: 700 }}>
+              {estafa.titulo}
+            </h3>
+          </div>
+
+          {/* Botón de voz para la estafa completa */}
+          <VoiceButton 
+            text={`${estafa.titulo}. ${estafa.que_es}. Ejemplo típico: ${estafa.ejemplo}. Cómo evitarlo: ${estafa.como_evitarlo.join('. ')}. Si ya caíste: ${estafa.que_hacer_si_caiste}`}
+            size={sz ? "large" : "normal"}
+          />
+
+          <div style={{ marginTop: 12 }}>
+            <p style={{ fontWeight: 700, fontSize: sz ? 16 : 14, color: "#1a1a18", marginBottom: 4 }}>
+              <i className="ti ti-info-circle" style={{ marginRight: 6 }} aria-hidden="true"></i>
+              ¿Qué es?
+            </p>
+            <p style={{ fontSize: sz ? 16 : 14, color: "#2C3E50", lineHeight: 1.6, marginBottom: 12 }}>
+              {estafa.que_es}
+            </p>
+
+            <p style={{ fontWeight: 700, fontSize: sz ? 16 : 14, color: "#1a1a18", marginBottom: 4 }}>
+              <i className="ti ti-alert-circle" style={{ marginRight: 6, color: "#D4580A" }} aria-hidden="true"></i>
+              Ejemplo típico
+            </p>
+            <div style={{ 
+              background: "#FFF0E0", 
+              padding: "10px 14px", 
+              borderRadius: 8, 
+              marginBottom: 12,
+              fontSize: sz ? 16 : 14,
+              color: "#7A2F00",
+              borderLeft: `3px solid ${estafa.color}`
+            }}>
+              {estafa.ejemplo}
+            </div>
+
+            <p style={{ fontWeight: 700, fontSize: sz ? 16 : 14, color: "#1a1a18", marginBottom: 4 }}>
+              <i className="ti ti-shield-check" style={{ marginRight: 6, color: "#1B6B3A" }} aria-hidden="true"></i>
+              Cómo evitarlo
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, marginBottom: 12 }}>
+              {estafa.como_evitarlo.map((item, idx) => (
+                <li key={idx} style={{ 
+                  display: "flex", 
+                  alignItems: "flex-start", 
+                  gap: 8, 
+                  padding: "4px 0",
+                  fontSize: sz ? 16 : 14,
+                  color: "#2C3E50"
+                }}>
+                  <span style={{ color: "#1B6B3A", fontWeight: 700 }}>✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p style={{ fontWeight: 700, fontSize: sz ? 16 : 14, color: "#1a1a18", marginBottom: 4 }}>
+              <i className="ti ti-phone-call" style={{ marginRight: 6, color: "#C0392B" }} aria-hidden="true"></i>
+              Si ya caíste
+            </p>
+            <div style={{ 
+              background: "#FDEDEC", 
+              padding: "10px 14px", 
+              borderRadius: 8,
+              fontSize: sz ? 16 : 14,
+              color: "#7A2F00",
+              borderLeft: `3px solid #C0392B`
+            }}>
+              {estafa.que_hacer_si_caiste}
+            </div>
+
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              style={{
+                marginTop: 16,
+                background: estafa.color,
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "8px 18px",
+                fontSize: sz ? 15 : 13,
+                fontWeight: 700,
+                cursor: "pointer",
+                fontFamily: "inherit"
+              }}
+            >
+              Volver arriba
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [fontSize, setFontSize] = useState("normal");
   const [provincia, setProvincia] = useState("");
@@ -632,6 +789,8 @@ export default function Home() {
   const [categoriaVideo, setCategoriaVideo] = useState("todos");
   const [isMobile, setIsMobile] = useState(false);
   const [tutorialDelDia, setTutorialDelDia] = useState(null);
+  const [mostrarEstafas, setMostrarEstafas] = useState(false);
+  const [estafaSeleccionada, setEstafaSeleccionada] = useState(null);
 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -773,6 +932,22 @@ export default function Home() {
     }, 100);
   }
 
+  const toggleEstafas = () => {
+    setMostrarEstafas(!mostrarEstafas);
+    if (!mostrarEstafas) {
+      setEstafaSeleccionada(null);
+      // Hacer scroll al panel de estafas
+      setTimeout(() => {
+        const estafaSection = document.getElementById('estafas-section');
+        if (estafaSection) {
+          const elementPosition = estafaSection.getBoundingClientRect().top;
+          const scrollPosition = window.pageYOffset + elementPosition - 60;
+          window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   const sz = fontSize === "large";
 
   return (
@@ -812,7 +987,7 @@ export default function Home() {
           <div style={{ background: "#F1EFE8", borderBottom: "0.5px solid rgba(0,0,0,0.12)", padding: "0.5rem 1.25rem", display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
               <i className="ti ti-map-pin" style={{ fontSize: 16, color: "#1B6B3A" }} aria-hidden="true"></i>
-              <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>🔍 Para búsqueda en tu zona - Su Provincia:</label>
+              <label htmlFor="sel-prov" style={{ fontSize: 13, fontWeight: 600, color: "#5F5E5A" }}>🔍 Para buscar datos útiles en tu zona - Su Provincia:</label>
               <select id="sel-prov" value={provincia} onChange={e => { setProvincia(e.target.value); setMunicipio(""); }}
                 style={{ background: "#fff", border: "0.5px solid rgba(0,0,0,0.22)", borderRadius: 8, padding: "5px 10px", fontFamily: "inherit", fontSize: 13, cursor: "pointer", minWidth: 145 }}>
                 <option value="">— Elegir provincia —</option>
@@ -847,6 +1022,77 @@ export default function Home() {
                 Es completamente normal sentirse confundido con la tecnología. Estamos aquí para acompañarle, paso a paso, sin apuros y con todo el cariño del mundo.
               </p>
             </div>
+
+            {/* Sección de Estafas Digitales */}
+            <section style={{ 
+              background: "#FDF2F0", 
+              borderRadius: 12, 
+              padding: "1rem 1.2rem", 
+              marginBottom: "1.5rem",
+              border: "2px solid #D4580A",
+              cursor: "pointer"
+            }}>
+              <div 
+                onClick={toggleEstafas}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 8
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{
+                    background: "#D4580A",
+                    borderRadius: "50%",
+                    width: 40,
+                    height: 40,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    fontSize: 20
+                  }}>
+                    <i className="ti ti-shield-off" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p style={{ 
+                      fontSize: sz ? 20 : 18, 
+                      fontWeight: 700, 
+                      color: "#7A2F00", 
+                      margin: 0,
+                      fontFamily: "'Lora', serif"
+                    }}>
+                      🔒 Estafas digitales más comunes
+                    </p>
+                    <p style={{ fontSize: sz ? 15 : 13, color: "#8B3A00", margin: "2px 0 0 0" }}>
+                      Cómo cuidarte de las estafas digitales con reglas fáciles.
+                    </p>
+                  </div>
+                </div>
+                <span style={{ 
+                  fontSize: 22, 
+                  color: "#D4580A",
+                  transition: "transform 0.3s",
+                  transform: mostrarEstafas ? "rotate(180deg)" : "rotate(0deg)"
+                }}>
+                  <i className="ti ti-chevron-down" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              {mostrarEstafas && (
+                <div style={{ marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid rgba(212,88,10,0.2)" }}>
+                  <EstafasPanel 
+                    estafas={estafasData.estafas || []}
+                    estafaSeleccionada={estafaSeleccionada}
+                    setEstafaSeleccionada={setEstafaSeleccionada}
+                    sz={sz}
+                  />
+                </div>
+              )}
+            </section>
+
             <h1 style={{ fontFamily: "'Lora', serif", fontSize: sz ? 28 : 24, color: "#1B6B3A", marginBottom: ".4rem", fontWeight: 600 }}>¿Qué desea aprender hoy?</h1>
             <p style={{ fontSize: sz ? 18 : 16, color: "#5F5E5A", marginBottom: "1.1rem", lineHeight: 1.6 }}>Elija uno de los temas de abajo y le guiamos sin tecnicismos.</p>
             
