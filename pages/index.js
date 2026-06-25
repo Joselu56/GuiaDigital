@@ -13,7 +13,7 @@ const provinciasArray = provinciasData.provincias || [];
 
 // Mapeo de localidades por provincia para el selector (visual)
 const MUNIS = {
-  bsas: ["Miramar","La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Isidro","Tigre","La Reja"],
+  bsas: ["Miramar","La Plata","Bahía Blanca","Mar del Plata","Quilmes","Lomas de Zamora","Merlo","Moreno","Morón","San Antonio de Padua","San Isidro","Tigre","La Reja"],
   caba: ["Palermo","Belgrano","Flores","Caballito","Recoleta","Balvanera","Villa Urquiza"],
   cba:  ["Córdoba Capital","Río Cuarto","Villa María","San Francisco","Villa Carlos Paz","Cosquín","La Cumbre","La Falda","Capilla del Monte","Jesús María","Colonia Caroya","San Esteban","Villa Giardino","Valle Hermoso"],
   sf:   ["Rosario","Santa Fe Capital","Venado Tuerto","Rafaela","San Lorenzo","Reconquista"],

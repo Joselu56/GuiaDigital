@@ -39,6 +39,25 @@
       }
     },
     {
+      "nombre": "San Antonio de Padua",
+      "urls": {
+        "municipal": "https://www.facebook.com/delegacionesmerlo.gob",
+        "whatsapp": "11 27323633",
+        "energia": "https://www.edenor.com/",
+        "agua": "https://www.aysa.com.ar/",
+        "hospital": "https://cemesa.com.ar/"
+      },
+      "contacto": {
+        "telefono_reclamos": "11 4866930/4851421",
+        "hospital_guardia": "0220 4837788/4866357",
+        "policia": "911",
+        "bomberos": "100",
+        "defensa_civil": "103 o (0220) 483-3648",
+        "nombre_hospital": "Centro Médico San Antonio",
+        "registro_civil": "Sullivan 370, B1718 Merlo, Provincia de Buenos Aires - 0220 485-7463"
+      }
+    },
+    {
       "nombre": "La Plata",
       "urls": {
         "municipal": "https://www.laplata.gob.ar/",

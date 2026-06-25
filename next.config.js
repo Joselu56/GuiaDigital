@@ -4,6 +4,6 @@ const nextConfig = {
 };
 // next.config.js
 module.exports = {
-  allowedDevOrigins: ['192.168.0.139','192.168.0.185','192.168.0.125'],
+  allowedDevOrigins: ['192.168.0.130','192.168.0.185','192.168.0.121'],
 }
 //  module.exports = nextConfig;

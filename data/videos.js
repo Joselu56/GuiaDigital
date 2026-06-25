@@ -134,6 +134,26 @@ export const videos = [
     categoria: "general",
     guia: "celular",
   },
+  {
+    id: "v13",
+    tipo: "youtube",
+    videoId: "uBPDLg7tqZc",          // <-- reemplazar con el ID real
+    titulo: "Celular:",
+    descripcion: "Como cargar SUBE 🚌con Mercado pago, desde CASA",
+    duracion: "1:45",
+    categoria: "celular",
+    guia: "celular",
+  },
+  {
+    id: "v14",
+    tipo: "youtube",
+    videoId: "OLLe91Iqte0",          // <-- reemplazar con el ID real
+    titulo: "Celular:",
+    descripcion: "Como cargar SUBE con Mercado pago.",
+    duracion: "4:05",
+    categoria: "celular",
+    guia: "celular",
+  },
   // -------------------------------------------------------
   // EJEMPLO: video propio subido a Cloudflare R2
   // -------------------------------------------------------
